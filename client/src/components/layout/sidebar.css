@@ -1,0 +1,345 @@
+.sidebar {
+  background: linear-gradient(180deg, #1a3a52 0%, #2c3e50 100%);
+  color: #ecf0f1;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  height: calc(100vh - 75px);
+}
+
+.sidebar.closed {
+  transform: translateX(-100%);
+  width: 0;
+  padding: 0;
+}
+
+.sidebar-header {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.sidebar-toggle {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #5dade2;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.sidebar-toggle:hover {
+  background: rgba(77, 163, 255, 0.2);
+  border-color: rgba(77, 163, 255, 0.3);
+}
+
+.sidebar-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #bdc3c7;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 1.5rem 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.menu-section {
+  position: relative;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  color: #bdc3c7;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+  width: 100%;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.menu-item:hover {
+  background: rgba(93, 173, 226, 0.15);
+  color: #5dade2;
+  border-left-color: #5dade2;
+  padding-left: 1.35rem;
+}
+
+.menu-item.active {
+  background: rgba(93, 173, 226, 0.2);
+  color: #4da3ff;
+  border-left-color: #4da3ff;
+  font-weight: 600;
+}
+
+.menu-item.submenu-toggle {
+  position: relative;
+}
+
+.menu-item.submenu-toggle.expanded {
+  background: rgba(93, 173, 226, 0.1);
+}
+
+.menu-icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.menu-label {
+  flex: 1;
+  white-space: nowrap;
+}
+
+.submenu-arrow {
+  font-size: 0.8rem;
+  margin-left: auto;
+  transition: transform 0.3s ease;
+  opacity: 0.7;
+}
+
+.submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0.25rem 0 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: rgba(0, 0, 0, 0.2);
+  border-left: 1px solid rgba(93, 173, 226, 0.2);
+}
+
+.submenu-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1.5rem 0.6rem 2.5rem;
+  color: #95a5a6;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+  font-size: 0.9rem;
+  position: relative;
+}
+
+.submenu-item:hover {
+  background: rgba(93, 173, 226, 0.1);
+  color: #5dade2;
+  border-left-color: #5dade2;
+  padding-left: 2.35rem;
+}
+
+.submenu-item.active {
+  background: rgba(93, 173, 226, 0.15);
+  color: #4da3ff;
+  border-left-color: #4da3ff;
+  font-weight: 600;
+}
+
+.submenu-icon {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.submenu-label {
+  flex: 1;
+  white-space: nowrap;
+}
+
+.sidebar-quick-access {
+  padding: 1.5rem 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+}
+
+.quick-access-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #95a5a6;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.75rem;
+  padding: 0 0.5rem;
+}
+
+.quick-access-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.75rem;
+  color: #bdc3c7;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.quick-access-item:hover {
+  background: rgba(93, 173, 226, 0.15);
+  color: #5dade2;
+  border-color: rgba(93, 173, 226, 0.3);
+}
+
+.quick-access-item.primary {
+  background: rgba(93, 173, 226, 0.2);
+  color: #4da3ff;
+  border-color: rgba(93, 173, 226, 0.3);
+  font-weight: 600;
+}
+
+.quick-access-item.primary:hover {
+  background: rgba(93, 173, 226, 0.3);
+}
+
+.sidebar-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.15);
+  font-size: 0.85rem;
+  color: #95a5a6;
+  flex-shrink: 0;
+}
+
+.footer-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.footer-item:hover {
+  color: #5dade2;
+  background: rgba(93, 173, 226, 0.1);
+}
+
+.footer-icon {
+  font-size: 1rem;
+}
+
+.footer-text {
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 60px;
+    width: 250px;
+    height: calc(100vh - 60px);
+    z-index: 999;
+    box-shadow: 4px 0 16px rgba(0, 0, 0, 0.3);
+  }
+
+  .sidebar.closed {
+    transform: translateX(-100%);
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .menu-item {
+    padding: 0.6rem 1rem;
+  }
+
+  .submenu-item {
+    padding: 0.5rem 1rem 0.5rem 2rem;
+  }
+
+  .sidebar-header {
+    padding: 0.75rem 1rem;
+  }
+
+  .sidebar-toggle {
+    width: 28px;
+    height: 28px;
+    font-size: 0.9rem;
+  }
+
+  .sidebar-title {
+    display: none;
+  }
+}
+
+/* ============================================
+   SCROLLBAR STYLING
+   ============================================ */
+
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: rgba(93, 173, 226, 0.3);
+  border-radius: 3px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: rgba(93, 173, 226, 0.5);
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  .sidebar {
+    display: none;
+  }
+}

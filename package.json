@@ -1,0 +1,12 @@
+{
+  "name": "procurement-discipline-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "node server/index.js",
+    "client": "cd client && npm run dev"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

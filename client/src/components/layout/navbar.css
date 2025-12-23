@@ -1,0 +1,493 @@
+/**
+ * Navbar Component Styles
+ * 
+ * Modern header navigation with search, notifications, and user menu
+ */
+
+/* ============================================
+   NAVBAR CONTAINER
+   ============================================ */
+
+.navbar {
+  background: linear-gradient(135deg, #013080 0%, #001850 100%);
+  color: #ffffff;
+  padding: 0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 75px;
+  box-sizing: border-box;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  height: 100%;
+  gap: 2rem;
+  flex: 1;
+}
+
+/* ============================================
+   NAVBAR LOGO
+   ============================================ */
+
+.navbar-logo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.navbar-logo a:hover {
+  opacity: 0.9;
+}
+
+.logo-icon {
+  font-size: 1.5rem;
+}
+
+.logo-text {
+  display: block;
+  white-space: nowrap;
+}
+
+/* ============================================
+   NAVBAR SEARCH BAR
+   ============================================ */
+
+.navbar-search {
+  flex: 1;
+  max-width: 400px;
+  margin: 0 2rem;
+}
+
+.navbar-search form {
+  display: flex;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.navbar-search form:focus-within {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 12px rgba(93, 173, 226, 0.3);
+}
+
+.search-input {
+  background: none;
+  border: none;
+  color: white;
+  padding: 0.75rem 1rem;
+  flex: 1;
+  outline: none;
+  font-size: 0.95rem;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.search-button {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.search-button:hover {
+  color: white;
+}
+
+/* ============================================
+   NAVBAR ACTIONS
+   ============================================ */
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.navbar-notifications {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-action-btn {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+}
+
+.navbar-action-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.navbar-action-btn.help-btn:hover {
+  background: #4da3ff;
+}
+
+.navbar-action-btn.settings-btn:hover {
+  background: #5dade2;
+}
+
+/* ============================================
+   NAVBAR USER MENU
+   ============================================ */
+
+.navbar-user {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.user-menu-toggle {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.user-menu-toggle:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4da3ff 0%, #5dade2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.user-name {
+  display: none;
+  font-weight: 600;
+}
+
+.menu-arrow {
+  font-size: 0.7rem;
+  opacity: 0.7;
+  margin-left: 0.25rem;
+  transition: transform 0.3s ease;
+}
+
+.user-menu-toggle:hover .menu-arrow {
+  transform: translateY(1px);
+}
+
+/* ============================================
+   USER DROPDOWN MENU
+   ============================================ */
+
+.user-menu-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  min-width: 280px;
+  margin-top: 0.5rem;
+  z-index: 2000;
+  overflow: hidden;
+  animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.user-menu-header {
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #013080 0%, #001850 100%);
+  color: white;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.user-full-name {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.user-email {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.user-role {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  text-transform: capitalize;
+}
+
+.user-menu-divider {
+  height: 1px;
+  background: #f0f0f0;
+}
+
+.user-menu-items {
+  padding: 0.5rem 0;
+}
+
+.user-menu-item {
+  background: none;
+  border: none;
+  color: #333;
+  padding: 0.75rem 1.5rem;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.user-menu-item:hover {
+  background: #f8f9fa;
+  color: #013080;
+}
+
+.user-menu-item.danger {
+  color: #e74c3c;
+}
+
+.user-menu-item.danger:hover {
+  background: #fee;
+  color: #c0392b;
+}
+
+/* ============================================
+   NAVBAR STATUS BAR
+   ============================================ */
+
+.navbar-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 2rem;
+  background: rgba(0, 0, 0, 0.1);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+  height: 0;
+  overflow: hidden;
+}
+
+.navbar-status.show {
+  height: auto;
+  padding: 0.25rem 2rem;
+}
+
+.status-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #e74c3c;
+  animation: pulse 2s infinite;
+}
+
+.status-indicator.online {
+  background: #2ecc71;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.status-text {
+  font-weight: 500;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .navbar-container {
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .navbar-search {
+    max-width: 250px;
+    margin: 0 1rem;
+  }
+
+  .logo-text {
+    display: none;
+  }
+
+  .user-name {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-container {
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-logo {
+    flex: 0;
+  }
+
+  .navbar-logo a {
+    gap: 0.5rem;
+  }
+
+  .logo-icon {
+    font-size: 1.2rem;
+  }
+
+  .navbar-search {
+    flex: 1;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .search-input {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .navbar-action-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .user-menu-toggle {
+    padding: 0.4rem 0.75rem;
+  }
+
+  .user-avatar {
+    width: 28px;
+    height: 28px;
+    font-size: 0.8rem;
+  }
+
+  .navbar-status {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-container {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .navbar-search {
+    display: none;
+  }
+
+  .navbar-action-btn {
+    width: 32px;
+    height: 32px;
+    padding: 0.4rem;
+  }
+
+  .user-menu-toggle {
+    padding: 0.4rem;
+  }
+
+  .user-menu-dropdown {
+    position: fixed;
+    top: 60px;
+    right: 0;
+    left: 0;
+    min-width: 100%;
+    border-radius: 0;
+    margin-top: 0;
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  .navbar {
+    position: static;
+    height: auto;
+  }
+
+  .navbar-search {
+    display: none;
+  }
+
+  .navbar-actions {
+    display: none;
+  }
+}
+
