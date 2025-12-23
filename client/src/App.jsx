@@ -25,10 +25,18 @@ export default function App() {
   const location = useLocation();
   const { permissions, loading } = usePermissions();
 
+  // Log route changes
+  useEffect(() => {
+    console.log('🔀 ROUTE CHANGED:', {
+      pathname: location.pathname,
+      search: location.search,
+      hash: location.hash,
+      timestamp: new Date().toLocaleTimeString()
+    });
+  }, [location.pathname]);
+
   // Check if current route is public
-  const isPublicRoute = ROUTES.some(
-    route => route.path === location.pathname && route.isPublic
-  );
+  const isPublicRoute = location.pathname === '/login';
 
   // Redirect to login if not authenticated (except for public routes)
   useEffect(() => {
@@ -79,6 +87,21 @@ export default function App() {
 
                   // Check permissions - default to true if no permission required
                   const hasAccess = !route.requiredPermission || permissions.includes(route.requiredPermission);
+
+                  if (!hasAccess) {
+                    console.warn('🚫 ACCESS DENIED:', {
+                      path: route.path,
+                      name: route.name,
+                      requiredPermission: route.requiredPermission,
+                      userPermissions: permissions
+                    });
+                  } else {
+                    console.log('✅ ROUTE ACCESSIBLE:', {
+                      path: route.path,
+                      name: route.name,
+                      requiredPermission: route.requiredPermission || 'none'
+                    });
+                  }
 
                   return (
                     <Route

@@ -71,7 +71,7 @@ const env = {
   // Logging
   LOG: {
     LEVEL: process.env.LOG_LEVEL || 'debug',
-    FILE: process.env.LOG_FILE || 'logs/app.log',
+    FILE: process.env.LOG_FILE || 'error_logs.log',
     MAX_SIZE: process.env.LOG_MAX_SIZE || '10m',
     MAX_FILES: process.env.LOG_MAX_FILES || '14d',
   },

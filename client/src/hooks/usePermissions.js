@@ -4,13 +4,17 @@ export const usePermissions = (userId = null) => {
   // Define role-based permissions (moved outside to use in initial state)
   const ROLE_PERMISSIONS = {
     admin: [
-      'create_procurement', 'edit_procurement', 'delete_procurement',
-      'create_template', 'edit_template', 'lock_template',
-      'create_rfq', 'publish_rfq', 'edit_rfq',
-      'evaluate_submission', 'make_award_decision',
-      'approve_contract', 'sign_contract',
-      'generate_audit_pack', 'view_audit_logs',
-      'manage_users', 'view_reports'
+      'view_dashboard',
+      'view_procurement', 'create_procurement', 'edit_procurement', 'delete_procurement', 'view_planning',
+      'create_template', 'edit_template', 'lock_template', 'view_templates',
+      'create_rfq', 'publish_rfq', 'edit_rfq', 'view_rfq',
+      'view_clarifications', 'respond_clarifications',
+      'view_submissions', 'evaluate_submission', 'make_award_decision',
+      'view_evaluations', 'view_approvals',
+      'approve_contract', 'sign_contract', 'view_contracts', 'view_awards',
+      'generate_audit_pack', 'view_audit_logs', 'view_audit',
+      'manage_users', 'view_reports',
+      'admin_view' // For admin tools access
     ],
     procurementManager: [
       'create_procurement', 'edit_procurement',

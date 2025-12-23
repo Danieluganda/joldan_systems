@@ -52,6 +52,15 @@ const Sidebar = ({ isOpen = true, onToggle = null }) => {
   // Check if route is active
   const isActive = (path) => location.pathname === path || location.pathname.startsWith(path + '/');
 
+  // Handle link click with logging
+  const handleLinkClick = (path, label) => {
+    console.log('🔗 SIDEBAR LINK CLICKED:', {
+      path,
+      label,
+      timestamp: new Date().toLocaleTimeString()
+    });
+  };
+
   // Menu structure with permissions
   const menuItems = [
     // Dashboard
@@ -210,6 +219,7 @@ const Sidebar = ({ isOpen = true, onToggle = null }) => {
                         <Link
                           key={subindex}
                           to={subitem.path}
+                          onClick={() => handleLinkClick(subitem.path, subitem.label)}
                           className={`submenu-item ${isActive(subitem.path) ? 'active' : ''}`}
                           title={subitem.label}
                         >
@@ -224,6 +234,7 @@ const Sidebar = ({ isOpen = true, onToggle = null }) => {
                 // Regular Menu Item
                 <Link
                   to={item.path}
+                  onClick={() => handleLinkClick(item.path, item.label)}
                   className={`menu-item ${isActive(item.path) ? 'active' : ''}`}
                   title={item.label}
                 >
@@ -238,17 +249,15 @@ const Sidebar = ({ isOpen = true, onToggle = null }) => {
      
       {/* Quick Access */}
       {isOpen && (
-
-       
         <div className="sidebar-quick-access">
           <div className="quick-access-title">Quick Access</div>
-          <Link to="/procurements/new" className="quick-access-item primary">
+          <Link to="/procurements/new" onClick={() => handleLinkClick('/procurements/new', 'New Procurement')} className="quick-access-item primary">
             ➕ New Procurement
           </Link>
-          <Link to="/approvals" className="quick-access-item">
+          <Link to="/approvals" onClick={() => handleLinkClick('/approvals', 'Pending Approvals')} className="quick-access-item">
             ⏳ Pending Approvals
           </Link>
-          <Link to="/audit" className="quick-access-item">
+          <Link to="/audit" onClick={() => handleLinkClick('/audit', 'Audit Packs')} className="quick-access-item">
             📦 Audit Packs
           </Link>
         </div>   

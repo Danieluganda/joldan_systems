@@ -7,6 +7,7 @@
 
 import Dashboard from './pages/Dashboard';
 import LoginPage from './pages/LoginPage';
+import ProcurementList from './pages/ProcurementList';
 import ProcurementSetup from './pages/ProcurementSetup';
 import PlanningPage from './pages/PlanningPage';
 import TemplateManager from './pages/TemplateManager';
@@ -19,6 +20,8 @@ import ApprovalPage from './pages/ApprovalPage';
 import AwardPage from './pages/AwardPage';
 import ContractPage from './pages/ContractPage';
 import AuditPage from './pages/AuditPage';
+import DocumentsPage from './pages/DocumentsPage';
+import RouteTestingPage from './pages/RouteTestingPage';
 
 /**
  * Route configuration objects
@@ -44,15 +47,57 @@ const ROUTES = [
     requiredPermission: 'view_dashboard',
     showInNav: true
   },
+  {
+    path: '/dashboard',
+    name: 'Dashboard',
+    component: Dashboard,
+    icon: '📊',
+    requiredPermission: 'view_dashboard',
+    showInNav: false
+  },
 
-  // Procurement Planning
+  // Procurement Management
+  {
+    path: '/procurements',
+    name: 'Procurements',
+    component: ProcurementList,
+    icon: '📦',
+    requiredPermission: 'view_procurement',
+    showInNav: true
+  },
+  {
+    path: '/procurements/new',
+    name: 'New Procurement',
+    component: ProcurementSetup,
+    icon: '📝',
+    requiredPermission: 'create_procurement',
+    showInNav: false
+  },
+  {
+    path: '/procurements/:id',
+    name: 'Procurement Details',
+    component: ProcurementList,
+    icon: '📦',
+    requiredPermission: 'view_procurement',
+    showInNav: false
+  },
+  {
+    path: '/procurements/:id/edit',
+    name: 'Edit Procurement',
+    component: ProcurementSetup,
+    icon: '📝',
+    requiredPermission: 'edit_procurement',
+    showInNav: false
+  },
+
+  // Procurement Planning (Legacy)
   {
     path: '/procurement-setup',
     name: 'New Procurement',
     component: ProcurementSetup,
     icon: '📝',
     requiredPermission: 'create_procurement',
-    showInNav: true
+    showInNav: false
   },
   {
     path: '/planning',
@@ -99,6 +144,22 @@ const ROUTES = [
     showInNav: false
   },
   {
+    path: '/rfq-workspace',
+    name: 'RFQ Workspace',
+    component: RFQWorkspace,
+    icon: '📄',
+    requiredPermission: 'view_rfq',
+    showInNav: false
+  },
+  {
+    path: '/rfq-editor',
+    name: 'RFQ Editor',
+    component: RFQEditor,
+    icon: '✍️',
+    requiredPermission: 'create_rfq',
+    showInNav: false
+  },
+  {
     path: '/clarifications',
     name: 'Clarifications',
     component: ClarificationsPage,
@@ -126,6 +187,22 @@ const ROUTES = [
     requiredPermission: 'view_evaluations',
     showInNav: true
   },
+  {
+    path: '/evaluation',
+    name: 'Evaluation',
+    component: EvaluationPage,
+    icon: '⭐',
+    requiredPermission: 'view_evaluations',
+    showInNav: false
+  },
+  {
+    path: '/results',
+    name: 'Results',
+    component: EvaluationPage,
+    icon: '📊',
+    requiredPermission: 'view_evaluations',
+    showInNav: false
+  },
 
   // Approvals
   {
@@ -135,6 +212,14 @@ const ROUTES = [
     icon: '✅',
     requiredPermission: 'view_approvals',
     showInNav: true
+  },
+  {
+    path: '/approvals/history',
+    name: 'Approval History',
+    component: ApprovalPage,
+    icon: '✅',
+    requiredPermission: 'view_approvals',
+    showInNav: false
   },
 
   // Awards & Contract
@@ -163,6 +248,34 @@ const ROUTES = [
     icon: '🔍',
     requiredPermission: 'view_audit',
     showInNav: true
+  },
+  {
+    path: '/audit/compliance',
+    name: 'Compliance',
+    component: AuditPage,
+    icon: '🔍',
+    requiredPermission: 'view_audit',
+    showInNav: false
+  },
+
+  // Documents
+  {
+    path: '/documents',
+    name: 'Documents',
+    component: DocumentsPage,
+    icon: '📄',
+    requiredPermission: 'view_documents',
+    showInNav: true
+  },
+
+  // Admin Tools
+  {
+    path: '/admin/route-testing',
+    name: 'Route Testing',
+    component: RouteTestingPage,
+    icon: '🧪',
+    requiredPermission: 'admin_view',
+    showInNav: true
   }
 ];
 
@@ -173,7 +286,7 @@ const ROUTES = [
 export const NAVIGATION_MENU = [
   {
     section: 'Main',
-    items: ROUTES.filter(r => r.showInNav && ['/', '/procurement-setup'].includes(r.path))
+    items: ROUTES.filter(r => r.showInNav && ['/', '/procurements', '/procurement-setup'].includes(r.path))
   },
   {
     section: 'Procurement Lifecycle',
@@ -201,6 +314,15 @@ export const NAVIGATION_MENU = [
     items: ROUTES.filter(r => 
       r.showInNav && 
       ['/audit'].includes(r.path)
+    )
+  },
+
+  // Admin Tools Section
+  {
+    section: 'Admin Tools',
+    items: ROUTES.filter(r => 
+      r.showInNav && 
+      ['/admin/route-testing'].includes(r.path)
     )
   }
 ];

@@ -30,6 +30,7 @@ try{
   app.use('/api/contracts', require('./routes/contracts'));
   app.use('/api/audits', require('./routes/audits'));
   app.use('/api/notifications', require('./routes/notifications'));
+  app.use('/api/logs', require('./routes/logs'));
 }catch(e){
   console.warn('Warning: some routes could not be registered —', e.message);
 }
