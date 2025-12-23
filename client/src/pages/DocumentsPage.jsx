@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { usePermissions } from '../hooks/usePermissions';
+import StandardLayout from '../components/layout/StandardLayout';
 import DocumentList from '../components/documents/DocumentList';
 import './pages.css';
 
@@ -13,23 +14,22 @@ const DocumentsPage = () => {
   const [selectedFolder, setSelectedFolder] = useState(null);
 
   return (
-    <div className="page-wrapper">
-      <div className="page-container">
-        {/* Page Header */}
-        <div className="page-header">
-          <h1>📄 Documents</h1>
-          <p>Manage all procurement documents and files</p>
-        </div>
-
-        {/* Document List */}
-        <div className="documents-section">
-          <DocumentList 
-            selectedFolder={selectedFolder}
-            onSelectFolder={setSelectedFolder}
-          />
-        </div>
+    <StandardLayout
+      title="📄 Documents"
+      description="Manage all procurement documents and files"
+      headerActions={[
+        { label: '+ Upload Document', variant: 'primary', onClick: () => console.log('Upload') },
+        { label: '📁 New Folder', variant: 'secondary', onClick: () => console.log('New folder') }
+      ]}
+    >
+      {/* Document List */}
+      <div className="documents-section">
+        <DocumentList 
+          selectedFolder={selectedFolder}
+          onSelectFolder={setSelectedFolder}
+        />
       </div>
-    </div>
+    </StandardLayout>
   );
 };
 

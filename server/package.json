@@ -1,0 +1,17 @@
+{
+  "name": "procurement-discipline-server",
+  "version": "0.1.0",
+  "private": true,
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "compression": "^1.8.1",
+    "cors": "^2.8.5",
+    "express": "^4.22.1",
+    "express-rate-limit": "^7.5.1",
+    "helmet": "^7.2.0"
+  }
+}

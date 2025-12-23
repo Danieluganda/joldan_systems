@@ -1,15 +1,14 @@
 // client/src/pages/Dashboard.jsx
-import React, { useState } from 'react';
+import React from 'react';
+import StandardLayout from '../components/layout/StandardLayout';
 import './pages.css';
 
 /**
  * Dashboard Component
  * Main overview page showing procurement metrics and recent activity
- * Uses main layout with header, sidebar, and footer
+ * Uses StandardLayout for consistent app-wide structure
  */
 export default function Dashboard() {
-  const [sidebarOpen, setSidebarOpen] = useState(true);
-
   // Sample stats data
   const stats = [
     { label: 'Active Procurements', value: '12', icon: '📊', color: '#3498db' },
@@ -27,20 +26,17 @@ export default function Dashboard() {
     { id: 5, type: 'Clarification', title: 'RFQ Clarification Response', status: 'Answered', time: '3 days ago', icon: '❓' }
   ];
 
+  const headerActions = [
+    { label: '+ New Procurement', variant: 'primary', onClick: () => console.log('New procurement') },
+    { label: '📅 Schedule', variant: 'secondary', onClick: () => console.log('Schedule') }
+  ];
+
   return (
-    <div className="page-wrapper">
-      <div className="page-container">
-        {/* Page Header */}
-        <div className="page-header">
-          <div>
-            <h1>📊 Dashboard</h1>
-            <p>Welcome back! Here's an overview of your procurement activities.</p>
-          </div>
-          <div className="header-actions">
-            <button className="btn btn-primary">+ New Procurement</button>
-            <button className="btn btn-secondary">📅 Schedule</button>
-          </div>
-        </div>
+    <StandardLayout
+      title="📊 Dashboard"
+      description="Welcome back! Here's an overview of your procurement activities."
+      headerActions={headerActions}
+    >
 
         {/* Stats Section */}
         <div className="stats-grid">
@@ -168,8 +164,7 @@ export default function Dashboard() {
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  );
-}
+      </StandardLayout>
+    );
+  }
 

@@ -22,16 +22,22 @@
  * @param {string} props.customHeaderContent - Custom header content (replaces default header)
  * 
  * @example
- * <StandardLayout
- *   title="📊 Dashboard"
- *   description="Welcome back! Overview of your activities"
- *   headerActions={[
- *     { label: '+ New Item', variant: 'primary', onClick: handleNew },
- *     { label: 'Schedule', variant: 'secondary', onClick: handleSchedule }
- *   ]}
- * >
- *   {/* Page content here */}
- * </StandardLayout>
+ * // Example usage:
+ * const actions = [
+ *   { label: '+ New Item', variant: 'primary', onClick: handleNew },
+ *   { label: 'Schedule', variant: 'secondary', onClick: handleSchedule }
+ * ];
+ * 
+ * // Render in JSX:
+ * return (
+ *   <StandardLayout
+ *     title="📊 Dashboard"
+ *     description="Welcome back! Overview of your activities"
+ *     headerActions={actions}
+ *   >
+ *     Page content goes here
+ *   </StandardLayout>
+ * );
  */
 export default function StandardLayout({
   children,

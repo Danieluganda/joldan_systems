@@ -1,3 +1,151 @@
 /**
  * Shared Constants
- * \n * System-wide constants used across frontend and backend\n */\n\nconst PROCUREMENT_TYPES = {\n  GOODS: 'goods',\n  SERVICES: 'services',\n  WORKS: 'works',\n  MIXED: 'mixed',\n};\n\nconst PROCUREMENT_STATUS = {\n  PLANNING: 'planning',\n  RFQ_PREPARATION: 'rfq_preparation',\n  RFQ_PUBLISHED: 'rfq_published',\n  SUBMISSION_CLOSING: 'submission_closing',\n  EVALUATION: 'evaluation',\n  AWARD_PENDING: 'award_pending',\n  AWARDED: 'awarded',\n  CONTRACT_EXECUTION: 'contract_execution',\n  COMPLETED: 'completed',\n  CANCELLED: 'cancelled',\n};\n\nconst APPROVAL_STATUS = {\n  PENDING: 'pending',\n  APPROVED: 'approved',\n  REJECTED: 'rejected',\n  RETURNED: 'returned',\n};\n\nconst EVALUATION_STATUS = {\n  NOT_STARTED: 'not_started',\n  IN_PROGRESS: 'in_progress',\n  COMPLETED: 'completed',\n  CONSOLIDATED: 'consolidated',\n};\n\nconst DOCUMENT_TYPES = {\n  SPECIFICATION: 'specification',\n  TERMS_CONDITIONS: 'terms_conditions',\n  EVALUATION_CRITERIA: 'evaluation_criteria',\n  TENDER_DOCUMENT: 'tender_document',\n  SUBMISSION: 'submission',\n  EVALUATION_REPORT: 'evaluation_report',\n  AWARD_NOTICE: 'award_notice',\n  CONTRACT: 'contract',\n};\n\nconst AUDIT_ACTIONS = {\n  CREATE: 'create',\n  UPDATE: 'update',\n  DELETE: 'delete',\n  APPROVE: 'approve',\n  REJECT: 'reject',\n  PUBLISH: 'publish',\n  DOWNLOAD: 'download',\n  LOGIN: 'login',\n  LOGOUT: 'logout',\n};\n\nconst USER_ROLES = {\n  ADMIN: 'ADMIN',\n  PROCUREMENT_OFFICER: 'PROCUREMENT_OFFICER',\n  EVALUATOR: 'EVALUATOR',\n  APPROVER: 'APPROVER',\n  VENDOR: 'VENDOR',\n  VIEWER: 'VIEWER',\n};\n\nconst NOTIFICATION_TYPES = {\n  SUBMISSION_RECEIVED: 'submission_received',\n  EVALUATION_STARTED: 'evaluation_started',\n  APPROVAL_PENDING: 'approval_pending',\n  AWARD_ANNOUNCED: 'award_announced',\n  CONTRACT_SIGNED: 'contract_signed',\n  STATUS_CHANGED: 'status_changed',\n};\n\nconst VALIDATION_RULES = {\n  MIN_PASSWORD_LENGTH: 8,\n  MAX_FILE_SIZE: 52428800, // 50MB\n  RFQ_TITLE_MIN: 10,\n  RFQ_TITLE_MAX: 255,\n  MIN_EVALUATORS: 2,\n  MAX_EVALUATORS: 10,\n  EVALUATION_SCALE: 100,\n};\n\nconst API_RESPONSE = {\n  SUCCESS: 'success',\n  ERROR: 'error',\n  VALIDATION_ERROR: 'validation_error',\n};\n\nmodule.exports = {\n  PROCUREMENT_TYPES,\n  PROCUREMENT_STATUS,\n  APPROVAL_STATUS,\n  EVALUATION_STATUS,\n  DOCUMENT_TYPES,\n  AUDIT_ACTIONS,\n  USER_ROLES,\n  NOTIFICATION_TYPES,\n  VALIDATION_RULES,\n  API_RESPONSE,\n};\n"
+ *
+ * This file contains system-wide constants used across the frontend and backend.
+ * Each constant is grouped by its domain for better organization and maintainability.
+ */
+
+/**
+ * Procurement Types
+ * Defines the types of procurements handled by the system.
+ */
+const PROCUREMENT_TYPES = {
+  GOODS: 'goods',
+  SERVICES: 'services',
+  WORKS: 'works',
+  MIXED: 'mixed',
+};
+
+/**
+ * Procurement Status
+ * Represents the various stages of the procurement lifecycle.
+ */
+const PROCUREMENT_STATUS = {
+  PLANNING: 'planning',
+  RFQ_PREPARATION: 'rfq_preparation',
+  RFQ_PUBLISHED: 'rfq_published',
+  SUBMISSION_CLOSING: 'submission_closing',
+  EVALUATION: 'evaluation',
+  AWARD_PENDING: 'award_pending',
+  AWARDED: 'awarded',
+  CONTRACT_EXECUTION: 'contract_execution',
+  COMPLETED: 'completed',
+  CANCELLED: 'cancelled',
+};
+
+/**
+ * Approval Status
+ * Indicates the status of an approval request.
+ */
+const APPROVAL_STATUS = {
+  PENDING: 'pending',
+  APPROVED: 'approved',
+  REJECTED: 'rejected',
+  RETURNED: 'returned',
+};
+
+/**
+ * Evaluation Status
+ * Tracks the progress of an evaluation process.
+ */
+const EVALUATION_STATUS = {
+  NOT_STARTED: 'not_started',
+  IN_PROGRESS: 'in_progress',
+  COMPLETED: 'completed',
+  CONSOLIDATED: 'consolidated',
+};
+
+/**
+ * Document Types
+ * Specifies the types of documents managed in the system.
+ */
+const DOCUMENT_TYPES = {
+  SPECIFICATION: 'specification',
+  TERMS_CONDITIONS: 'terms_conditions',
+  EVALUATION_CRITERIA: 'evaluation_criteria',
+  TENDER_DOCUMENT: 'tender_document',
+  SUBMISSION: 'submission',
+  EVALUATION_REPORT: 'evaluation_report',
+  AWARD_NOTICE: 'award_notice',
+  CONTRACT: 'contract',
+};
+
+/**
+ * Audit Actions
+ * Defines the actions that can be audited in the system.
+ */
+const AUDIT_ACTIONS = {
+  CREATE: 'create',
+  UPDATE: 'update',
+  DELETE: 'delete',
+  APPROVE: 'approve',
+  REJECT: 'reject',
+  PUBLISH: 'publish',
+  DOWNLOAD: 'download',
+  LOGIN: 'login',
+  LOGOUT: 'logout',
+};
+
+/**
+ * User Roles
+ * Lists the roles available in the system.
+ */
+const USER_ROLES = {
+  ADMIN: 'ADMIN',
+  PROCUREMENT_OFFICER: 'PROCUREMENT_OFFICER',
+  EVALUATOR: 'EVALUATOR',
+  APPROVER: 'APPROVER',
+  VENDOR: 'VENDOR',
+  VIEWER: 'VIEWER',
+};
+
+/**
+ * Notification Types
+ * Represents the types of notifications sent by the system.
+ */
+const NOTIFICATION_TYPES = {
+  SUBMISSION_RECEIVED: 'submission_received',
+  EVALUATION_STARTED: 'evaluation_started',
+  APPROVAL_PENDING: 'approval_pending',
+  AWARD_ANNOUNCED: 'award_announced',
+  CONTRACT_SIGNED: 'contract_signed',
+  STATUS_CHANGED: 'status_changed',
+};
+
+/**
+ * Validation Rules
+ * Contains validation rules used throughout the system.
+ */
+const VALIDATION_RULES = {
+  MIN_PASSWORD_LENGTH: 8,
+  MAX_FILE_SIZE: 52428800, // 50MB
+  RFQ_TITLE_MIN: 10,
+  RFQ_TITLE_MAX: 255,
+  MIN_EVALUATORS: 2,
+  MAX_EVALUATORS: 10,
+  EVALUATION_SCALE: 100,
+};
+
+/**
+ * API Response Types
+ * Defines the standard response types for API calls.
+ */
+const API_RESPONSE = {
+  SUCCESS: 'success',
+  ERROR: 'error',
+  VALIDATION_ERROR: 'validation_error',
+};
+
+// Exporting all constants as a single module
+module.exports = {
+  PROCUREMENT_TYPES,
+  PROCUREMENT_STATUS,
+  APPROVAL_STATUS,
+  EVALUATION_STATUS,
+  DOCUMENT_TYPES,
+  AUDIT_ACTIONS,
+  USER_ROLES,
+  NOTIFICATION_TYPES,
+  VALIDATION_RULES,
+  API_RESPONSE,
+};

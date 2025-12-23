@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { usePermissions } from '../hooks/usePermissions';
+import StandardLayout from '../components/layout/StandardLayout';
 import './pages.css';
 
 /**
@@ -77,26 +78,23 @@ const ProcurementList = () => {
   };
 
   return (
-    <div className="page-wrapper">
-      <div className="page-container">
-        {/* Page Header */}
-        <div className="page-header">
-          <h1>📦 Procurements</h1>
-          <p>Manage and track all procurement activities</p>
-        </div>
-
-        {/* Controls */}
-        <div className="controls-section">
-          <div className="search-filter-group">
-            <input
-              type="text"
-              placeholder="Search procurements..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="search-input"
-            />
-            <select
-              value={filterStatus}
+    <StandardLayout
+      title="📦 Procurements"
+      description="Manage and track all procurement activities"
+      headerActions={permissions.includes('create_procurement') ? [{ label: '➕ New Procurement', variant: 'primary', onClick: () => navigate('/procurements/new') }] : []}
+    >
+      {/* Controls */}
+      <div className="controls-section">
+        <div className="search-filter-group">
+          <input
+            type="text"
+            placeholder="Search procurements..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="search-input"
+          />
+          <select
+            value={filterStatus}
               onChange={(e) => setFilterStatus(e.target.value)}
               className="filter-select"
             >
@@ -109,15 +107,6 @@ const ProcurementList = () => {
             </select>
           </div>
 
-          {permissions.includes('create_procurement') && (
-            <button
-              onClick={() => navigate('/procurements/new')}
-              className="btn btn-primary"
-              style={{ marginLeft: 'auto' }}
-            >
-              ➕ New Procurement
-            </button>
-          )}
         </div>
 
         {/* Loading State */}
@@ -210,8 +199,7 @@ const ProcurementList = () => {
             )}
           </>
         )}
-      </div>
-    </div>
+    </StandardLayout>
   );
 };
 
