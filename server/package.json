@@ -5,7 +5,9 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "node --inspect index.js",
+    "debug": "node --inspect-brk index.js"
   },
   "dependencies": {
     "compression": "^1.8.1",

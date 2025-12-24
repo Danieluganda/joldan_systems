@@ -333,6 +333,8 @@ class EnterpriseApplicationServer extends EventEmitter {
         } catch (error) {
             this.healthStatus = 'error';
             this.emit('server:error', error);
+            console.error('Original error:', error);
+            console.error('Error stack:', error.stack);
             throw new Error(`Server initialization failed: ${error.message}`);
         }
     }
@@ -683,4 +685,3 @@ if (require.main === module) {
         process.exit(1);
     });
 }
-;

@@ -30,9 +30,9 @@ const Footer = ({ version = '1.0.0', statusPage = null }) => {
 
   return (
     <footer className="app-footer">
-      {/* Main Footer Content */}
+      {/* Main Footer Content - Commented out for now */}
+      {/* 
       <div className="footer-content">
-        {/* Column 1: Product Info */}
         <div className="footer-column">
           <div 
             className="footer-column-header"
@@ -52,7 +52,6 @@ const Footer = ({ version = '1.0.0', statusPage = null }) => {
           </div>
         </div>
 
-        {/* Column 2: Support & Help */}
         <div className="footer-column">
           <div 
             className="footer-column-header"
@@ -92,7 +91,6 @@ const Footer = ({ version = '1.0.0', statusPage = null }) => {
           </div>
         </div>
 
-        {/* Column 3: Legal & Policy */}
         <div className="footer-column">
           <div 
             className="footer-column-header"
@@ -132,7 +130,6 @@ const Footer = ({ version = '1.0.0', statusPage = null }) => {
           </div>
         </div>
 
-        {/* Column 4: System Status */}
         <div className="footer-column">
           <div 
             className="footer-column-header"
@@ -170,8 +167,6 @@ const Footer = ({ version = '1.0.0', statusPage = null }) => {
             )}
           </div>
         </div>
-
-        {/* Column 5: Contact Info */}
         
         <div className="footer-column">
           <div 
@@ -205,6 +200,7 @@ const Footer = ({ version = '1.0.0', statusPage = null }) => {
           </div>
         </div>
       </div>
+      */}
       
       {/* Bottom Bar */}
       <div className="footer-bottom">
@@ -228,19 +224,19 @@ const Footer = ({ version = '1.0.0', statusPage = null }) => {
           </div>
         </div>
 
-      <div className="footer-right">
-        <div className="social-links">
-          <a href="https://x.com" title="X (Twitter)" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faXTwitter} size="lg" />
-          </a>
-          <a href="https://linkedin.com" title="LinkedIn" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faLinkedin} size="lg" />
-          </a>
-          <a href="https://github.com" title="GitHub" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faGithub} size="lg" />
-          </a>
+        <div className="footer-right">
+          <div className="social-links">
+            <a href="https://x.com" title="X (Twitter)" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faXTwitter} size="lg" />
+            </a>
+            <a href="https://linkedin.com" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faLinkedin} size="lg" />
+            </a>
+            <a href="https://github.com" title="GitHub" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faGithub} size="lg" />
+            </a>
+          </div>
         </div>
-      </div>
       </div>
 
       {/* Accessibility Notice */}

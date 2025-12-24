@@ -2274,3 +2274,2775 @@
   URL: /
   UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
   Data: {"type":"console.log"}
+[2025-12-24T23:12:15.562Z] INFO: 
+╔════════════════════════════════════════════════════════════════╗
+║         Procurement Discipline System - Logging Active         ║
+╚════════════════════════════════════════════════════════════════╝
+
+📝 LOG MANAGEMENT COMMANDS:
+  • logService.sendLogs()         - Send pending logs to server
+  • logService.downloadLogs()     - Download logs as JSON file
+  • logService.clearLogs()        - Clear all logs from memory
+  • logService.getLogCount()      - Show number of logs in memory
+  • logService.getLogs()          - Display all logs in console
+  • logService.exportAsJSON()     - Get logs as JSON string
+
+📊 LOGGING INFO:
+  • All console.log, console.warn, console.error are captured
+  • Logs auto-send to server every 30 seconds or at 50 entries
+  • Session ID: Use sessionStorage.getItem('logSessionId')
+  • Log files saved to: server/logs/ directory
+  • Consolidated log: server/logs/consolidated.log
+
+🔍 MONITORING:
+  • Route changes are logged: 🔀 ROUTE CHANGED
+  • Page lifecycle logged: 📄 PAGE MOUNTED/UNMOUNTED
+  • Link clicks logged: 🔗 SIDEBAR LINK CLICKED
+  • Permission checks logged: ✅ ROUTE ACCESSIBLE / 🚫 ACCESS DENIED
+  • Errors logged: ❌ ERROR
+
+💾 BACKEND LOG API:
+  • GET  /api/logs                - List all log files
+  • GET  /api/logs/:filename      - Read specific log file
+  • POST /api/logs                - Save logs (automatic)
+  • DELETE /api/logs/:filename    - Delete specific log file
+
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.562Z] INFO: ✅ Menu Validator initialized - use: menuValidator.printSummary() or menuValidator.validateMenuItems()
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.562Z] INFO: 🚀 Application starting - Logging initialized
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.575Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.575Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.575Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.575Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.575Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.575Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.575Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.575Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.575Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.575Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.575Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.576Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.576Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.576Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.576Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.576Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.576Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.576Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.576Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.576Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.576Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.576Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.576Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.576Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.576Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.577Z] WARN: 🚫 ACCESS DENIED: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:12:15.577Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.577Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.578Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.578Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.578Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.578Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.578Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.578Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.578Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.578Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.578Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.578Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.578Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.578Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.578Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.578Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.578Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.579Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.579Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.579Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.579Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.580Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.581Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.581Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.581Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.581Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.581Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.582Z] WARN: 🚫 ACCESS DENIED: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:12:15.582Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.582Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.943Z] WARN: ⚠️ Failed to send logs to server: 500
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:12:16.009Z] INFO: 🔀 ROUTE CHANGED: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:16.032Z] INFO: 🔀 ROUTE CHANGED: [object Object]
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:16.061Z] WARN: ⚠️ Failed to send logs to server: 500
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:12:16.094Z] INFO: Using mock notifications (server unavailable)
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:16.103Z] WARN: ⚠️ Failed to send logs to server: 500
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:12:16.135Z] INFO: Using demo user (server unavailable)
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:16.136Z] INFO: Using demo user (server unavailable)
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:16.140Z] INFO: Using demo user (server unavailable)
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:16.141Z] INFO: Using demo user (server unavailable)
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:16.142Z] INFO: Using mock notifications (server unavailable)
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:16.142Z] INFO: Using demo user (server unavailable)
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:16.142Z] INFO: Using demo user (server unavailable)
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:16.142Z] INFO: Using demo user (server unavailable)
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:16.147Z] INFO: Using demo user (server unavailable)
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:16.150Z] WARN: ⚠️ Failed to send logs to server: 500
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:12:46.354Z] WARN: ⚠️ Failed to send logs to server: 500
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:12:46.363Z] INFO: Using mock notifications (server unavailable)
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:46.378Z] WARN: ⚠️ Failed to send logs to server: 500
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:13:16.344Z] WARN: ⚠️ Failed to send logs to server: 500
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:13:16.346Z] INFO: Using mock notifications (server unavailable)
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:13:16.357Z] WARN: ⚠️ Failed to send logs to server: 500
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:13:46.350Z] WARN: ⚠️ Failed to send logs to server: 500
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:13:46.366Z] INFO: Using mock notifications (server unavailable)
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:13:46.376Z] WARN: ⚠️ Failed to send logs to server: 500
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:12:15.794Z] INFO: 
+╔════════════════════════════════════════════════════════════════╗
+║         Procurement Discipline System - Logging Active         ║
+╚════════════════════════════════════════════════════════════════╝
+
+📝 LOG MANAGEMENT COMMANDS:
+  • logService.sendLogs()         - Send pending logs to server
+  • logService.downloadLogs()     - Download logs as JSON file
+  • logService.clearLogs()        - Clear all logs from memory
+  • logService.getLogCount()      - Show number of logs in memory
+  • logService.getLogs()          - Display all logs in console
+  • logService.exportAsJSON()     - Get logs as JSON string
+
+📊 LOGGING INFO:
+  • All console.log, console.warn, console.error are captured
+  • Logs auto-send to server every 30 seconds or at 50 entries
+  • Session ID: Use sessionStorage.getItem('logSessionId')
+  • Log files saved to: server/logs/ directory
+  • Consolidated log: server/logs/consolidated.log
+
+🔍 MONITORING:
+  • Route changes are logged: 🔀 ROUTE CHANGED
+  • Page lifecycle logged: 📄 PAGE MOUNTED/UNMOUNTED
+  • Link clicks logged: 🔗 SIDEBAR LINK CLICKED
+  • Permission checks logged: ✅ ROUTE ACCESSIBLE / 🚫 ACCESS DENIED
+  • Errors logged: ❌ ERROR
+
+💾 BACKEND LOG API:
+  • GET  /api/logs                - List all log files
+  • GET  /api/logs/:filename      - Read specific log file
+  • POST /api/logs                - Save logs (automatic)
+  • DELETE /api/logs/:filename    - Delete specific log file
+
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.794Z] INFO: ✅ Menu Validator initialized - use: menuValidator.printSummary() or menuValidator.validateMenuItems()
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.794Z] INFO: 🚀 Application starting - Logging initialized
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.807Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.807Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.807Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.808Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.808Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.809Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.809Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.810Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.810Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.810Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.810Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.810Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.810Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.810Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.810Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.810Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.811Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.811Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.811Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.811Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.811Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.811Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.811Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.811Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.811Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.811Z] WARN: 🚫 ACCESS DENIED: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:12:15.811Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.811Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.821Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.821Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.821Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.821Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.821Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.821Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.821Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.821Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.821Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.821Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.821Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.821Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.821Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.821Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.821Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.821Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.821Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.822Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.822Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.823Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.827Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.827Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.828Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.828Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.828Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.828Z] WARN: 🚫 ACCESS DENIED: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:12:15.829Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:15.829Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:16.139Z] WARN: ⚠️ Failed to send logs to server: 500
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:12:16.169Z] INFO: 🔀 ROUTE CHANGED: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:16.173Z] INFO: 🔀 ROUTE CHANGED: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:16.182Z] INFO: Using mock notifications (server unavailable)
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:16.182Z] INFO: Using demo user (server unavailable)
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:16.187Z] WARN: ⚠️ Failed to send logs to server: 500
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:12:16.191Z] INFO: Using mock notifications (server unavailable)
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:16.197Z] INFO: Using demo user (server unavailable)
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:16.200Z] INFO: Using demo user (server unavailable)
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:16.203Z] WARN: ⚠️ Failed to send logs to server: 500
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:12:16.207Z] INFO: Using demo user (server unavailable)
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:16.213Z] INFO: Using demo user (server unavailable)
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:16.219Z] WARN: ⚠️ Failed to send logs to server: 500
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:12:16.229Z] INFO: Using demo user (server unavailable)
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:16.232Z] INFO: Using demo user (server unavailable)
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:16.233Z] INFO: Using demo user (server unavailable)
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:16.237Z] WARN: ⚠️ Failed to send logs to server: 500
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:12:46.361Z] WARN: ⚠️ Failed to send logs to server: 500
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:12:46.377Z] INFO: Using mock notifications (server unavailable)
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:12:46.389Z] WARN: ⚠️ Failed to send logs to server: 500
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:13:16.329Z] WARN: ⚠️ Failed to send logs to server: 500
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:13:16.331Z] INFO: Using mock notifications (server unavailable)
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:13:16.343Z] WARN: ⚠️ Failed to send logs to server: 500
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:13:46.340Z] WARN: ⚠️ Failed to send logs to server: 500
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:13:46.352Z] INFO: Using mock notifications (server unavailable)
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:13:46.369Z] WARN: ⚠️ Failed to send logs to server: 500
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:14:16.621Z] INFO: 📤 Sent 84 logs to server
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:14:16.625Z] INFO: 📤 Sent 85 logs to server
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.326Z] INFO: 
+╔════════════════════════════════════════════════════════════════╗
+║         Procurement Discipline System - Logging Active         ║
+╚════════════════════════════════════════════════════════════════╝
+
+📝 LOG MANAGEMENT COMMANDS:
+  • logService.sendLogs()         - Send pending logs to server
+  • logService.downloadLogs()     - Download logs as JSON file
+  • logService.clearLogs()        - Clear all logs from memory
+  • logService.getLogCount()      - Show number of logs in memory
+  • logService.getLogs()          - Display all logs in console
+  • logService.exportAsJSON()     - Get logs as JSON string
+
+📊 LOGGING INFO:
+  • All console.log, console.warn, console.error are captured
+  • Logs auto-send to server every 30 seconds or at 50 entries
+  • Session ID: Use sessionStorage.getItem('logSessionId')
+  • Log files saved to: server/logs/ directory
+  • Consolidated log: server/logs/consolidated.log
+
+🔍 MONITORING:
+  • Route changes are logged: 🔀 ROUTE CHANGED
+  • Page lifecycle logged: 📄 PAGE MOUNTED/UNMOUNTED
+  • Link clicks logged: 🔗 SIDEBAR LINK CLICKED
+  • Permission checks logged: ✅ ROUTE ACCESSIBLE / 🚫 ACCESS DENIED
+  • Errors logged: ❌ ERROR
+
+💾 BACKEND LOG API:
+  • GET  /api/logs                - List all log files
+  • GET  /api/logs/:filename      - Read specific log file
+  • POST /api/logs                - Save logs (automatic)
+  • DELETE /api/logs/:filename    - Delete specific log file
+
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.326Z] INFO: ✅ Menu Validator initialized - use: menuValidator.printSummary() or menuValidator.validateMenuItems()
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.326Z] INFO: 🚀 Application starting - Logging initialized
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.337Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.337Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.337Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.337Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.337Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.337Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.337Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.337Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.337Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.337Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.337Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.337Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.337Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.337Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.337Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.337Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.337Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.337Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.337Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.337Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.337Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.337Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.337Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.337Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.337Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.337Z] WARN: 🚫 ACCESS DENIED: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:15:02.337Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.337Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.337Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.337Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.337Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.337Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.337Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.337Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.337Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.337Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.337Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.337Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.337Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.337Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.337Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.338Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.338Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.338Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.338Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.338Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.338Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.339Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.339Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.339Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.339Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.339Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.339Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.339Z] WARN: 🚫 ACCESS DENIED: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:15:02.339Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.339Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.543Z] INFO: 🔀 ROUTE CHANGED: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.547Z] INFO: 🔀 ROUTE CHANGED: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:02.548Z] INFO: 📤 Sent 50 logs to server
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.652Z] INFO: 🔗 SIDEBAR LINK CLICKED: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.664Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.665Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.665Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.665Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.665Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.665Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.665Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.665Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.665Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.665Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.665Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.666Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.666Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.666Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.666Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.666Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.666Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.666Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.666Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.666Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.666Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.666Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.666Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.667Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.667Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.667Z] WARN: 🚫 ACCESS DENIED: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:15:08.667Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.667Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.667Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.668Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.668Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.668Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.668Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.668Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.668Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.668Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.668Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.670Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.670Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.671Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.671Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.671Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.671Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.671Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.671Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.671Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.671Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.671Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.671Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.671Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.671Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.672Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.672Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.672Z] WARN: 🚫 ACCESS DENIED: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:15:08.672Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.672Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.687Z] INFO: 🔀 ROUTE CHANGED: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:08.689Z] INFO: 📤 Sent 50 logs to server
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.928Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.929Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.929Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.929Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.929Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.929Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.929Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.929Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.929Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.929Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.929Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.929Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.929Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.929Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.929Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.929Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.929Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.929Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.930Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.930Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.930Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.930Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.930Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.930Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.930Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.930Z] WARN: 🚫 ACCESS DENIED: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:15:11.930Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.930Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.931Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:14:46.353Z] INFO: 📤 Sent 1 logs to server
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:14:53.239Z] INFO: [vite] server connection lost. Polling for restart...
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:14:46.358Z] INFO: 📤 Sent 1 logs to server
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:14:53.240Z] INFO: [vite] server connection lost. Polling for restart...
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.932Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.932Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.932Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.932Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.932Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.932Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.932Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.932Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.932Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.932Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.932Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.932Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.932Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.932Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.932Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.932Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.932Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.932Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.932Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.932Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.932Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.932Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.933Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.933Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.933Z] WARN: 🚫 ACCESS DENIED: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:15:11.933Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.933Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.957Z] INFO: 📤 Sent 50 logs to server
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:11.959Z] INFO: 🔀 ROUTE CHANGED: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:16.351Z] INFO: 📤 Sent 2 logs to server
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:16.363Z] INFO: 📤 Sent 2 logs to server
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:32.361Z] INFO: 📤 Sent 29 logs to server
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:16:03.379Z] INFO: 📤 Sent 1 logs to server
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:46.349Z] INFO: 📤 Sent 1 logs to server
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:15:46.350Z] INFO: 📤 Sent 1 logs to server
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:16:33.343Z] INFO: 📤 Sent 1 logs to server
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:17:03.329Z] INFO: 📤 Sent 1 logs to server
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:16:47.389Z] INFO: 📤 Sent 1 logs to server
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:16:47.395Z] INFO: 📤 Sent 1 logs to server
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:17:33.335Z] INFO: 📤 Sent 1 logs to server
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:18:03.330Z] INFO: 📤 Sent 1 logs to server
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:18:56.330Z] WARN: ⚠️ Failed to send logs to server: 500
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:18:56.341Z] INFO: Using mock notifications (server unavailable)
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:29.114Z] INFO: [vite] server connection lost. Polling for restart...
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.567Z] INFO: 
+╔════════════════════════════════════════════════════════════════╗
+║         Procurement Discipline System - Logging Active         ║
+╚════════════════════════════════════════════════════════════════╝
+
+📝 LOG MANAGEMENT COMMANDS:
+  • logService.sendLogs()         - Send pending logs to server
+  • logService.downloadLogs()     - Download logs as JSON file
+  • logService.clearLogs()        - Clear all logs from memory
+  • logService.getLogCount()      - Show number of logs in memory
+  • logService.getLogs()          - Display all logs in console
+  • logService.exportAsJSON()     - Get logs as JSON string
+
+📊 LOGGING INFO:
+  • All console.log, console.warn, console.error are captured
+  • Logs auto-send to server every 30 seconds or at 50 entries
+  • Session ID: Use sessionStorage.getItem('logSessionId')
+  • Log files saved to: server/logs/ directory
+  • Consolidated log: server/logs/consolidated.log
+
+🔍 MONITORING:
+  • Route changes are logged: 🔀 ROUTE CHANGED
+  • Page lifecycle logged: 📄 PAGE MOUNTED/UNMOUNTED
+  • Link clicks logged: 🔗 SIDEBAR LINK CLICKED
+  • Permission checks logged: ✅ ROUTE ACCESSIBLE / 🚫 ACCESS DENIED
+  • Errors logged: ❌ ERROR
+
+💾 BACKEND LOG API:
+  • GET  /api/logs                - List all log files
+  • GET  /api/logs/:filename      - Read specific log file
+  • POST /api/logs                - Save logs (automatic)
+  • DELETE /api/logs/:filename    - Delete specific log file
+
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.567Z] INFO: ✅ Menu Validator initialized - use: menuValidator.printSummary() or menuValidator.validateMenuItems()
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.567Z] INFO: 🚀 Application starting - Logging initialized
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.576Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.576Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.576Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.576Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.576Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.576Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.576Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.576Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.576Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.576Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.576Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.576Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.576Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.576Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.576Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.576Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.576Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.576Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.577Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.577Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.577Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.577Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.577Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.577Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.577Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.577Z] WARN: 🚫 ACCESS DENIED: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:19:37.577Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.577Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.577Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.577Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.577Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.577Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.577Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.577Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.577Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.577Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.577Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.577Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.577Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.577Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.577Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.577Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.577Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.577Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.577Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.577Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.577Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:17:48.342Z] INFO: 📤 Sent 1 logs to server
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:18:49.352Z] WARN: ⚠️ Failed to send logs to server: 500
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:18:49.354Z] INFO: Using mock notifications (server unavailable)
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:17:48.336Z] INFO: 📤 Sent 1 logs to server
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:18:49.340Z] WARN: ⚠️ Failed to send logs to server: 500
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:18:49.349Z] INFO: Using mock notifications (server unavailable)
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.578Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.578Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.578Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.578Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.578Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.578Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.578Z] WARN: 🚫 ACCESS DENIED: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:19:37.578Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.578Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.644Z] INFO: 📤 Sent 50 logs to server
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.648Z] INFO: 🔀 ROUTE CHANGED: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:37.650Z] INFO: 🔀 ROUTE CHANGED: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:08.345Z] INFO: 📤 Sent 12 logs to server
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:50.338Z] INFO: 📤 Sent 3 logs to server
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:19:50.334Z] INFO: 📤 Sent 3 logs to server
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:37.584Z] INFO: 📤 Sent 1 logs to server
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.833Z] INFO: 🔗 SIDEBAR LINK CLICKED: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.845Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.845Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.845Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.845Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.845Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.845Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.846Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.846Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.846Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.846Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.846Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.846Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.846Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.846Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.846Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.846Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.846Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.846Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.846Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.846Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.846Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.846Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.846Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.846Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.846Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.846Z] WARN: 🚫 ACCESS DENIED: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:20:58.846Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.846Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.846Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.846Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.846Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.847Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.847Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.847Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.847Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.847Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.847Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.847Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.847Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.847Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.847Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.847Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.847Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.847Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.847Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.847Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.847Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.847Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.848Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.848Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.848Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.848Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.848Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.848Z] WARN: 🚫 ACCESS DENIED: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:20:58.848Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.848Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.871Z] INFO: 🔀 ROUTE CHANGED: [object Object]
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:58.871Z] INFO: 📤 Sent 50 logs to server
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:07.585Z] INFO: 📤 Sent 10 logs to server
+  URL: /clarifications
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.724Z] INFO: 
+╔════════════════════════════════════════════════════════════════╗
+║         Procurement Discipline System - Logging Active         ║
+╚════════════════════════════════════════════════════════════════╝
+
+📝 LOG MANAGEMENT COMMANDS:
+  • logService.sendLogs()         - Send pending logs to server
+  • logService.downloadLogs()     - Download logs as JSON file
+  • logService.clearLogs()        - Clear all logs from memory
+  • logService.getLogCount()      - Show number of logs in memory
+  • logService.getLogs()          - Display all logs in console
+  • logService.exportAsJSON()     - Get logs as JSON string
+
+📊 LOGGING INFO:
+  • All console.log, console.warn, console.error are captured
+  • Logs auto-send to server every 30 seconds or at 50 entries
+  • Session ID: Use sessionStorage.getItem('logSessionId')
+  • Log files saved to: server/logs/ directory
+  • Consolidated log: server/logs/consolidated.log
+
+🔍 MONITORING:
+  • Route changes are logged: 🔀 ROUTE CHANGED
+  • Page lifecycle logged: 📄 PAGE MOUNTED/UNMOUNTED
+  • Link clicks logged: 🔗 SIDEBAR LINK CLICKED
+  • Permission checks logged: ✅ ROUTE ACCESSIBLE / 🚫 ACCESS DENIED
+  • Errors logged: ❌ ERROR
+
+💾 BACKEND LOG API:
+  • GET  /api/logs                - List all log files
+  • GET  /api/logs/:filename      - Read specific log file
+  • POST /api/logs                - Save logs (automatic)
+  • DELETE /api/logs/:filename    - Delete specific log file
+
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.724Z] INFO: ✅ Menu Validator initialized - use: menuValidator.printSummary() or menuValidator.validateMenuItems()
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.724Z] INFO: 🚀 Application starting - Logging initialized
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.727Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.727Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.727Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.727Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.727Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.727Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.727Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.727Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.727Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.727Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.727Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.727Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.727Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.727Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.727Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.727Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.727Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.727Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.728Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.728Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.728Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.728Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.728Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.728Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.728Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.728Z] WARN: 🚫 ACCESS DENIED: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:21:38.728Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.728Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.728Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.728Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.728Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.728Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.728Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.728Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.728Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.728Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.728Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.728Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.728Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.728Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.728Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.728Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.728Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.728Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.728Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.728Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.728Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.729Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.729Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.729Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.729Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.729Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.729Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.729Z] WARN: 🚫 ACCESS DENIED: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:21:38.729Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.729Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.771Z] INFO: 🔀 ROUTE CHANGED: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.772Z] INFO: 🔀 ROUTE CHANGED: [object Object]
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:38.773Z] INFO: 📤 Sent 50 logs to server
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.952Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.952Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.952Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.952Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.952Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.952Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.952Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.952Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.952Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.952Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.952Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.952Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.952Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.952Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.952Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.952Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.952Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.952Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.952Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.952Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.952Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.952Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.952Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.952Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.952Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.952Z] WARN: 🚫 ACCESS DENIED: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:21:42.952Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.952Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.952Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.952Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.952Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.953Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.953Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.953Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.953Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.953Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.953Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.953Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.953Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.953Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.953Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.953Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.953Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.953Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.953Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.953Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.953Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.953Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.953Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.953Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.954Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.954Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.954Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.954Z] WARN: 🚫 ACCESS DENIED: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:21:42.954Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.954Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.958Z] INFO: 🔀 ROUTE CHANGED: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:42.963Z] INFO: 📤 Sent 50 logs to server
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:48.650Z] INFO: 🔗 SIDEBAR LINK CLICKED: [object Object]
+  URL: /settings
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:48.661Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:48.661Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:48.662Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:48.662Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:48.662Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:48.662Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:48.662Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:48.662Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:48.662Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:48.662Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:48.662Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:48.662Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:48.662Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:48.662Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:48.663Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:48.663Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:48.663Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:48.663Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:48.663Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:48.663Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:48.663Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:48.663Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:48.663Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:48.663Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:48.663Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:48.663Z] WARN: 🚫 ACCESS DENIED: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.warn"}
+[2025-12-24T23:21:48.663Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:48.663Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:21:48.664Z] INFO: ✅ ROUTE ACCESSIBLE: [object Object]
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:51.334Z] INFO: 📤 Sent 1 logs to server
+  URL: /analytics/step
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-24T23:20:51.337Z] INFO: 📤 Sent 1 logs to server
+  URL: /
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
