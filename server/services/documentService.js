@@ -337,6 +337,17 @@ class DocumentService {
         }
       });
 
+        // Log activity
+        const { logActivity } = require('./activityLogService');
+        await logActivity({
+          user: userId,
+          action: 'upload',
+          entityType: 'Document',
+          entityId: document._id,
+          details: { documentType, fileName: fileData.originalname, fileSize: fileData.size },
+          ip: ipAddress
+        });
+
       // Send notifications
       await this.sendDocumentUploadNotifications(document, user);
 
@@ -777,6 +788,23 @@ class DocumentService {
         }
       });
 
+        // Log activity
+        const { logActivity } = require('./activityLogService');
+        await logActivity({
+          user: userId,
+          action: 'version',
+          entityType: 'Document',
+          entityId: newDocument._id,
+          details: {
+            originalDocumentId: originalDocument._id,
+            oldVersion: originalDocument.version.version,
+            newVersion: newVersion.version,
+            versionType,
+            majorChanges
+          },
+          ip: ipAddress
+        });
+
       // Send notifications
       await this.sendVersionCreationNotifications(originalDocument, newDocument, userId);
 
@@ -851,6 +879,21 @@ class DocumentService {
           userAgent
         }
       });
+
+        // Log activity
+        const { logActivity } = require('./activityLogService');
+        await logActivity({
+          user: userId,
+          action: 'download',
+          entityType: 'Document',
+          entityId: documentId,
+          details: {
+            documentNumber: document.documentNumber,
+            fileName: document.file.fileName,
+            fileSize: document.file.size
+          },
+          ip: ipAddress
+        });
 
       return {
         fileBuffer,

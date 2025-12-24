@@ -1,81 +1,73 @@
 /**
- * Plan Service
+ * Plan Service - UPDATED for STEP System
  * 
- * Comprehensive procurement planning with strategic planning, budget management,
- * timeline tracking, approval workflows, and advanced planning analytics
- * Feature 12: Strategic procurement planning and management
+ * Comprehensive procurement planning with:
+ * - Excel import from ERT Procurement Plan
+ * - STEP system compliance (7 methods, Prior/Post review)
+ * - Strategic planning and budget management
+ * - Timeline tracking with 15 stages
+ * - Approval workflows
+ * - Advanced planning analytics
  */
 
-const mongoose = require('mongoose');
 const Plan = require('../db/models/Plan');
-const PlanTemplate = require('../db/models/PlanTemplate');
-const Budget = require('../db/models/Budget');
-const User = require('../db/models/User');
-const Procurement = require('../db/models/Procurement');
 const logger = require('../utils/logger');
 const auditService = require('./auditService');
 const notificationService = require('./notificationService');
 const approvalService = require('./approvalService');
 const { validateInput, sanitize } = require('../utils/validation');
-const { formatDate, formatCurrency, generatePlanId, calculateDateDifference } = require('../utils/helpers');
+const { formatDate, formatCurrency, calculateDateDifference } = require('../utils/helpers');
 const { assessPlanRisk, validateBudgetAllocation } = require('../utils/planningAnalytics');
-const { generatePlanReport } = require('../utils/reportGenerator');
 
-// Plan types and categories
-const PLAN_TYPES = {
-  STRATEGIC: 'strategic',
-  ANNUAL: 'annual',
-  QUARTERLY: 'quarterly',
-  PROJECT: 'project',
-  EMERGENCY: 'emergency',
-  FRAMEWORK: 'framework',
-  CATEGORY: 'category',
-  SUPPLIER: 'supplier'
+// STEP Procurement Methods (7 methods)
+const PROCUREMENT_METHODS = {
+  RFB: 'RFB',           // Request for Bids
+  RFQ: 'RFQ',           // Request for Quotations
+  DIR: 'DIR',           // Direct Selection
+  QCBS: 'QCBS',         // Quality and Cost Based Selection
+  CQS: 'CQS',           // Consultant Qualification Selection
+  CDS: 'CDS',           // Consultant Direct Selection
+  INDV: 'INDV'          // Individual Consultant Selection
 };
 
-const PLAN_STATUS = {
-  DRAFT: 'draft',
-  UNDER_REVIEW: 'under_review',
-  APPROVED: 'approved',
-  ACTIVE: 'active',
-  ON_HOLD: 'on_hold',
-  COMPLETED: 'completed',
-  CANCELLED: 'cancelled',
-  EXPIRED: 'expired'
+// STEP Review Types
+const REVIEW_TYPES = {
+  PRIOR: 'Prior',       // Requires Bank approval
+  POST: 'Post'          // Internal review only
 };
 
-const PLANNING_PHASES = {
-  INITIATION: 'initiation',
-  ANALYSIS: 'analysis',
-  STRATEGY: 'strategy',
-  BUDGETING: 'budgeting',
-  APPROVAL: 'approval',
-  EXECUTION: 'execution',
-  MONITORING: 'monitoring',
-  CLOSURE: 'closure'
+// STEP Process Status
+const PROCESS_STATUS = {
+  DRAFT: 'Draft',
+  SUBMITTED: 'Submitted',
+  UNDER_REVIEW: 'Under Review',
+  CLEARED: 'Cleared',
+  SIGNED: 'Signed',
+  CANCELED: 'Canceled',
+  PENDING_IMPLEMENTATION: 'Pending Implementation'
 };
 
-const PRIORITY_LEVELS = {
-  CRITICAL: 'critical',
-  HIGH: 'high',
-  MEDIUM: 'medium',
-  LOW: 'low'
+// Procurement Categories
+const CATEGORIES = {
+  GOODS: 'Goods',
+  WORKS: 'Works',
+  CIVIL_WORKS: 'Civil Works',
+  CONSULTING_SERVICES: 'Consulting Services',
+  NON_CONSULTING_SERVICES: 'Non-Consulting Services'
 };
 
-const BUDGET_CATEGORIES = {
-  GOODS: 'goods',
-  SERVICES: 'services',
-  WORKS: 'works',
-  CONSULTANCY: 'consultancy',
-  ICT: 'ict',
-  MAINTENANCE: 'maintenance',
-  UTILITIES: 'utilities',
-  TRAVEL: 'travel'
+// Market Approaches
+const MARKET_APPROACHES = {
+  OPEN_NATIONAL: 'Open - National',
+  OPEN_INTERNATIONAL: 'Open - International',
+  RESTRICTED: 'Restricted'
 };
 
+// Plan Events
 const PLAN_EVENTS = {
   CREATED: 'plan_created',
   UPDATED: 'plan_updated',
+  IMPORTED: 'plan_imported_from_excel',
   SUBMITTED: 'plan_submitted',
   APPROVED: 'plan_approved',
   ACTIVATED: 'plan_activated',
@@ -85,548 +77,466 @@ const PLAN_EVENTS = {
 
 class PlanService {
   /**
-   * Create comprehensive procurement plan
+   * ========================================
+   * EXCEL IMPORT METHODS
+   * ========================================
    */
-  static async createPlan(planData, userId, requestInfo = {}) {
+
+  /**
+   * Import single procurement plan from Excel row
+   */
+  static async importPlanFromExcel(excelData, options = {}, userId = 'system') {
     try {
       const {
-        title,
-        description,
-        planType = PLAN_TYPES.ANNUAL,
-        planPeriod,
-        objectives = [],
-        scope,
-        budgetAllocation,
-        procurementItems = [],
-        timeline,
-        stakeholders = [],
-        riskAssessment = {},
-        complianceRequirements = [],
-        approvalWorkflow = [],
-        templateId = null,
-        parentPlanId = null,
-        departmentId = null,
-        organizationUnit = null,
-        priority = PRIORITY_LEVELS.MEDIUM,
-        metadata = {}
-      } = planData;
+        workplanId,
+        sheetName,      // RFB/RFQ/DIR/QCBS/CQS/CDS/INDV
+        rowNumber,
+        ipAddress,
+        userAgent
+      } = options;
 
-      const { ipAddress, userAgent } = requestInfo;
+      logger.info('Importing plan from Excel', { sheetName, rowNumber });
 
-      // Validate required fields
-      if (!title || !planPeriod || !budgetAllocation) {
-        throw new Error('Title, plan period, and budget allocation are required');
-      }
-
-      // Sanitize inputs
-      const sanitizedTitle = sanitize(title);
-      const sanitizedDescription = sanitize(description || '');
-
-      // Validate plan period
-      this.validatePlanPeriod(planPeriod);
-
-      // Validate budget allocation
-      const budgetValidation = await validateBudgetAllocation(budgetAllocation, planType);
-      if (!budgetValidation.valid) {
-        throw new Error(`Budget validation failed: ${budgetValidation.reason}`);
-      }
-
-      // Generate plan ID
-      const planId = generatePlanId(planType);
-
-      // Load template if specified
-      let templateData = null;
-      if (templateId) {
-        templateData = await this.loadPlanTemplate(templateId);
-      }
-
-      // Calculate plan metrics
-      const planMetrics = await this.calculatePlanMetrics(procurementItems, budgetAllocation, timeline);
-
-      // Assess planning risks
-      const riskAnalysis = await assessPlanRisk(procurementItems, budgetAllocation, timeline, riskAssessment);
-
-      // Create plan record
-      const plan = new Plan({
-        planId,
-        title: sanitizedTitle,
-        description: sanitizedDescription,
-        
-        // Plan classification
-        planType,
-        priority,
-        phase: PLANNING_PHASES.INITIATION,
-        status: PLAN_STATUS.DRAFT,
-        
-        // Planning period
-        period: {
-          startDate: new Date(planPeriod.startDate),
-          endDate: new Date(planPeriod.endDate),
-          financialYear: planPeriod.financialYear,
-          quarter: planPeriod.quarter,
-          duration: calculateDateDifference(planPeriod.startDate, planPeriod.endDate)
-        },
-        
-        // Strategic alignment
-        strategy: {
-          objectives: objectives.map(obj => ({
-            id: obj.id || new mongoose.Types.ObjectId(),
-            title: sanitize(obj.title),
-            description: sanitize(obj.description || ''),
-            weight: obj.weight || 1,
-            measurableOutcomes: obj.outcomes || [],
-            successCriteria: obj.criteria || [],
-            dependencies: obj.dependencies || []
-          })),
-          scope: sanitize(scope || ''),
-          strategicAlignment: planData.strategicAlignment || [],
-          performanceIndicators: planData.kpis || []
-        },
-        
-        // Budget management
-        budget: {
-          totalAllocation: budgetAllocation.total,
-          currency: budgetAllocation.currency || 'USD',
-          categories: Object.keys(BUDGET_CATEGORIES).map(category => ({
-            category,
-            allocation: budgetAllocation.categories?.[category] || 0,
-            spent: 0,
-            committed: 0,
-            available: budgetAllocation.categories?.[category] || 0,
-            variance: 0
-          })),
-          contingency: budgetAllocation.contingency || 0,
-          approvedBudget: 0,
-          budgetSource: budgetAllocation.source || 'general',
-          costCenter: budgetAllocation.costCenter,
-          budgetCode: budgetAllocation.budgetCode
-        },
-        
-        // Procurement items
-        items: procurementItems.map(item => ({
-          id: item.id || new mongoose.Types.ObjectId(),
-          category: item.category,
-          description: sanitize(item.description),
-          quantity: item.quantity || 1,
-          unitPrice: item.unitPrice || 0,
-          totalValue: (item.quantity || 1) * (item.unitPrice || 0),
-          budgetCategory: item.budgetCategory || BUDGET_CATEGORIES.GOODS,
-          priority: item.priority || PRIORITY_LEVELS.MEDIUM,
-          plannedDate: item.plannedDate ? new Date(item.plannedDate) : null,
-          specifications: item.specifications || {},
-          vendor: item.preferredVendor || null,
-          procurementMethod: item.procurementMethod || 'open_tender',
-          approvalLevel: item.approvalLevel || 'standard',
-          riskLevel: item.riskLevel || 'medium',
-          dependencies: item.dependencies || [],
-          status: 'planned'
-        })),
-        
-        // Timeline and milestones
-        timeline: {
-          milestones: (timeline?.milestones || []).map(milestone => ({
-            id: milestone.id || new mongoose.Types.ObjectId(),
-            title: sanitize(milestone.title),
-            description: sanitize(milestone.description || ''),
-            dueDate: new Date(milestone.dueDate),
-            dependencies: milestone.dependencies || [],
-            deliverables: milestone.deliverables || [],
-            responsible: milestone.responsible,
-            status: 'pending',
-            completedDate: null,
-            notes: ''
-          })),
-          criticalPath: timeline?.criticalPath || [],
-          bufferTime: timeline?.bufferTime || 0,
-          totalDuration: planMetrics.totalDuration
-        },
-        
-        // Stakeholder management
-        stakeholders: stakeholders.map(stakeholder => ({
-          userId: stakeholder.userId ? new mongoose.Types.ObjectId(stakeholder.userId) : null,
-          role: stakeholder.role,
-          responsibility: stakeholder.responsibility,
-          department: stakeholder.department,
-          contactInfo: {
-            email: stakeholder.email,
-            phone: stakeholder.phone
-          },
-          involvement: stakeholder.involvement || 'informed',
-          influence: stakeholder.influence || 'medium',
-          interest: stakeholder.interest || 'medium'
-        })),
-        
-        // Risk management
-        risk: {
-          assessment: {
-            overallRisk: riskAnalysis.overallRisk,
-            riskScore: riskAnalysis.riskScore,
-            riskFactors: riskAnalysis.factors || []
-          },
-          risks: (riskAssessment.risks || []).map(risk => ({
-            id: risk.id || new mongoose.Types.ObjectId(),
-            title: sanitize(risk.title),
-            description: sanitize(risk.description),
-            category: risk.category,
-            probability: risk.probability || 'medium',
-            impact: risk.impact || 'medium',
-            riskLevel: risk.riskLevel || 'medium',
-            mitigation: {
-              strategy: risk.mitigation?.strategy || '',
-              actions: risk.mitigation?.actions || [],
-              responsible: risk.mitigation?.responsible,
-              timeline: risk.mitigation?.timeline,
-              cost: risk.mitigation?.cost || 0
-            },
-            status: 'identified',
-            lastReview: new Date()
-          })),
-          mitigationPlan: riskAssessment.mitigationPlan || [],
-          contingencyPlans: riskAssessment.contingencyPlans || []
-        },
-        
-        // Compliance and governance
-        compliance: {
-          requirements: complianceRequirements.map(req => ({
-            standard: req.standard,
-            requirement: sanitize(req.requirement),
-            status: req.status || 'pending',
-            evidence: req.evidence || [],
-            responsible: req.responsible,
-            dueDate: req.dueDate ? new Date(req.dueDate) : null
-          })),
-          frameworks: planData.complianceFrameworks || [],
-          auditRequirements: planData.auditRequirements || [],
-          reportingRequirements: planData.reportingRequirements || []
-        },
-        
-        // Approval workflow
-        approval: {
-          workflow: approvalWorkflow.map(step => ({
-            level: step.level,
-            approver: step.approver ? new mongoose.Types.ObjectId(step.approver) : null,
-            role: step.role,
-            department: step.department,
-            sequence: step.sequence || 1,
-            required: step.required !== false,
-            status: 'pending',
-            approvedAt: null,
-            comments: '',
-            conditions: step.conditions || []
-          })),
-          currentLevel: 0,
-          overallStatus: 'pending',
-          submittedAt: null,
-          finalApprovalAt: null
-        },
-        
-        // Performance tracking
-        performance: {
-          metrics: planMetrics,
-          tracking: {
-            completionRate: 0,
-            budgetUtilization: 0,
-            timelineAdherence: 100,
-            qualityScore: 0,
-            stakeholderSatisfaction: 0
-          },
-          benchmarks: planData.benchmarks || [],
-          targets: planData.targets || []
-        },
-        
-        // Organizational context
-        organization: {
-          departmentId: departmentId ? new mongoose.Types.ObjectId(departmentId) : null,
-          organizationUnit,
-          parentPlanId: parentPlanId ? new mongoose.Types.ObjectId(parentPlanId) : null,
-          childPlans: [],
-          relatedPlans: []
-        },
-        
-        // Template and versioning
-        template: templateData ? {
-          templateId: templateData._id,
-          version: templateData.version,
-          appliedAt: new Date()
-        } : null,
-        
-        // Lifecycle management
-        lifecycle: {
-          version: '1.0',
-          createdAt: new Date(),
-          createdBy: userId,
-          lastModified: new Date(),
-          modifiedBy: userId,
-          statusHistory: [{
-            status: PLAN_STATUS.DRAFT,
-            phase: PLANNING_PHASES.INITIATION,
-            changedAt: new Date(),
-            changedBy: userId,
-            reason: 'Plan creation'
-          }]
-        },
-        
-        // System tracking
-        system: {
-          creationIP: ipAddress,
-          creationUserAgent: userAgent,
-          lastAccessIP: ipAddress,
-          lastAccessAt: new Date(),
-          accessCount: 1,
-          editCount: 0
-        },
-        
-        // Metadata and tags
-        metadata: {
-          tags: metadata.tags || [],
-          customFields: metadata.customFields || {},
-          externalReferences: metadata.externalReferences || [],
-          attachments: metadata.attachments || []
-        }
+      // Import using Plan model's importFromExcel method
+      const plan = await Plan.importFromExcel({
+        workplanId,
+        excelData,
+        sheetName,
+        rowNumber,
+        createdBy: userId
       });
 
-      await plan.save();
-
-      // Create initial budget records
-      await this.createPlanBudgetRecords(plan);
-
-      // Set up approval workflow
-      if (approvalWorkflow.length > 0) {
-        await this.initializeApprovalWorkflow(plan, userId);
-      }
-
-      // Create notification for stakeholders
-      await this.sendPlanCreationNotifications(plan, userId);
-
       // Create audit trail
-      await auditService.logAuditEvent({
-        action: PLAN_EVENTS.CREATED,
+      await this.createAuditLog({
+        action: PLAN_EVENTS.IMPORTED,
         entityType: 'plan',
-        entityId: plan._id,
+        entityId: plan.id,
         userId,
         metadata: {
-          planId: plan.planId,
-          planType,
-          totalBudget: budgetAllocation.total,
-          itemCount: procurementItems.length,
+          referenceNumber: plan.referenceNumber,
+          sheetName,
+          rowNumber,
+          procurementMethod: plan.procurementMethod,
+          estimatedAmountUSD: plan.estimatedAmountUSD,
           ipAddress,
           userAgent
         }
       });
 
+      // Send notification
+      await this.sendPlanCreationNotification(plan, userId);
+
       return {
         success: true,
-        message: 'Procurement plan created successfully',
-        plan: {
-          id: plan._id,
-          planId: plan.planId,
-          title: plan.title,
-          planType: plan.planType,
-          status: plan.status,
-          totalBudget: plan.budget.totalAllocation,
-          itemCount: plan.items.length,
-          period: plan.period
-        }
+        message: 'Plan imported from Excel successfully',
+        plan: this.formatPlanResponse(plan)
       };
 
     } catch (error) {
-      logger.error('Error creating procurement plan', { 
-        error: error.message, 
-        planData, 
-        userId 
+      logger.error('Error importing plan from Excel', { 
+        error: error.message,
+        sheetName: options.sheetName,
+        rowNumber: options.rowNumber
+      });
+      throw new Error(`Excel import failed: ${error.message}`);
+    }
+  }
+
+  /**
+   * Batch import multiple plans from Excel
+   */
+  static async batchImportFromExcel(excelRows, options = {}, userId = 'system') {
+    try {
+      const {
+        workplanId,
+        sheetName,
+        ipAddress,
+        userAgent
+      } = options;
+
+      logger.info('Batch importing plans from Excel', { 
+        sheetName, 
+        rowCount: excelRows.length 
+      });
+
+      // Use Plan model's batch import
+      const results = await Plan.batchImportFromExcel({
+        workplanId,
+        excelRows,
+        sheetName,
+        createdBy: userId
+      });
+
+      // Create audit log for batch import
+      await this.createAuditLog({
+        action: 'batch_import_completed',
+        entityType: 'plan',
+        entityId: workplanId,
+        userId,
+        metadata: {
+          sheetName,
+          totalRows: results.total,
+          successful: results.successful,
+          failed: results.failed,
+          errors: results.errors,
+          ipAddress,
+          userAgent
+        }
+      });
+
+      // Send notification about batch import
+      await this.sendBatchImportNotification(results, sheetName, userId);
+
+      return {
+        success: true,
+        message: `Batch import completed: ${results.successful}/${results.total} plans imported successfully`,
+        results
+      };
+
+    } catch (error) {
+      logger.error('Error in batch Excel import', { 
+        error: error.message,
+        sheetName: options.sheetName
+      });
+      throw new Error(`Batch import failed: ${error.message}`);
+    }
+  }
+
+  /**
+   * Import entire Excel workbook (all 7 sheets)
+   */
+  static async importExcelWorkbook(workbookData, workplanId, userId = 'system') {
+    try {
+      const results = {
+        workplanId,
+        totalPlans: 0,
+        successful: 0,
+        failed: 0,
+        byMethod: {},
+        errors: []
+      };
+
+      // Import each sheet (7 procurement methods)
+      for (const method of Object.keys(PROCUREMENT_METHODS)) {
+        if (workbookData[method] && workbookData[method].length > 0) {
+          logger.info(`Importing ${method} sheet`, { 
+            rowCount: workbookData[method].length 
+          });
+
+          const methodResults = await this.batchImportFromExcel(
+            workbookData[method],
+            { workplanId, sheetName: method },
+            userId
+          );
+
+          results.byMethod[method] = methodResults.results;
+          results.totalPlans += methodResults.results.total;
+          results.successful += methodResults.results.successful;
+          results.failed += methodResults.results.failed;
+          results.errors.push(...methodResults.results.errors);
+        }
+      }
+
+      logger.info('Workbook import completed', results);
+
+      return {
+        success: true,
+        message: `Workbook imported: ${results.successful}/${results.totalPlans} plans`,
+        results
+      };
+
+    } catch (error) {
+      logger.error('Error importing Excel workbook', { error: error.message });
+      throw new Error(`Workbook import failed: ${error.message}`);
+    }
+  }
+
+  /**
+   * ========================================
+   * STEP-SPECIFIC METHODS
+   * ========================================
+   */
+
+  /**
+   * Get plans by procurement method
+   */
+  static async getPlansByMethod(procurementMethod, filters = {}, userId = 'system') {
+    try {
+      const plans = await Plan.getByMethod(procurementMethod, filters);
+
+      return {
+        success: true,
+        procurementMethod,
+        count: plans.length,
+        plans: plans.map(p => this.formatPlanResponse(p))
+      };
+
+    } catch (error) {
+      logger.error('Error getting plans by method', { 
+        error: error.message,
+        procurementMethod 
+      });
+      throw new Error(`Failed to get plans by method: ${error.message}`);
+    }
+  }
+
+  /**
+   * Get plans pending Bank approval (Prior Review)
+   */
+  static async getPendingBankApproval(workplanId = null, userId = 'system') {
+    try {
+      const plans = await Plan.getPendingBankApproval(workplanId);
+
+      return {
+        success: true,
+        count: plans.length,
+        workplanId,
+        plans: plans.map(p => this.formatPlanResponse(p))
+      };
+
+    } catch (error) {
+      logger.error('Error getting pending bank approvals', { error: error.message });
+      throw new Error(`Failed to get pending approvals: ${error.message}`);
+    }
+  }
+
+  /**
+   * Get plans by workplan
+   */
+  static async getPlansByWorkplan(workplanId, filters = {}, userId = 'system') {
+    try {
+      const plans = await Plan.getByWorkplan(workplanId, filters);
+
+      // Get workplan summary
+      const summary = this.calculateWorkplanSummary(plans);
+
+      return {
+        success: true,
+        workplanId,
+        count: plans.length,
+        summary,
+        plans: plans.map(p => this.formatPlanResponse(p))
+      };
+
+    } catch (error) {
+      logger.error('Error getting plans by workplan', { 
+        error: error.message,
+        workplanId 
+      });
+      throw new Error(`Failed to get workplan plans: ${error.message}`);
+    }
+  }
+
+  /**
+   * Find plan by reference number
+   */
+  static async findByReferenceNumber(referenceNumber, userId = 'system') {
+    try {
+      const plan = await Plan.findByReferenceNumber(referenceNumber);
+
+      if (!plan) {
+        throw new Error('Plan not found');
+      }
+
+      return {
+        success: true,
+        plan: this.formatPlanResponse(plan)
+      };
+
+    } catch (error) {
+      logger.error('Error finding plan by reference number', { 
+        error: error.message,
+        referenceNumber 
+      });
+      throw new Error(`Plan lookup failed: ${error.message}`);
+    }
+  }
+
+  /**
+   * Get STEP analytics with procurement method breakdown
+   */
+  static async getSTEPAnalytics(filters = {}, userId = 'system') {
+    try {
+      const analytics = await Plan.getAnalytics(filters);
+
+      // Enhance with additional STEP metrics
+      const enhanced = {
+        ...analytics,
+        
+        // Prior review performance
+        priorReview: {
+          total: analytics.reviewTypeBreakdown.Prior || 0,
+          pendingApproval: analytics.pendingBankApproval || 0,
+          approvalRate: this.calculateApprovalRate(analytics),
+          averageApprovalTime: 0 // TODO: Calculate from actual data
+        },
+        
+        // Method distribution percentages
+        methodDistribution: this.calculateMethodDistribution(analytics.methodBreakdown, analytics.totalPlans),
+        
+        // Status progression
+        statusProgression: this.calculateStatusProgression(analytics.statusBreakdown),
+        
+        // Value analysis by method
+        valueByMethod: {}, // TODO: Calculate from detailed data
+        
+        // Compliance score
+        complianceScore: this.calculateComplianceScore(analytics)
+      };
+
+      return {
+        success: true,
+        analytics: enhanced
+      };
+
+    } catch (error) {
+      logger.error('Error getting STEP analytics', { error: error.message });
+      throw new Error(`Analytics retrieval failed: ${error.message}`);
+    }
+  }
+
+  /**
+   * ========================================
+   * CORE PLAN MANAGEMENT
+   * ========================================
+   */
+
+  /**
+   * Create comprehensive procurement plan
+   */
+  static async createPlan(planData, userId = 'system', requestInfo = {}) {
+    try {
+      const { ipAddress, userAgent } = requestInfo;
+
+      // Validate required STEP fields
+      this.validateSTEPFields(planData);
+
+      // Sanitize inputs
+      const sanitizedData = this.sanitizePlanData(planData);
+
+      // Create plan using Plan model
+      const plan = await Plan.create({
+        ...sanitizedData,
+        procurementId: sanitizedData.procurementId || `proc_${Date.now()}`,
+        departmentInfo: sanitizedData.departmentInfo || { name: 'general' },
+        createdBy: userId
+      });
+
+      // Create audit trail
+      await this.createAuditLog({
+        action: PLAN_EVENTS.CREATED,
+        entityType: 'plan',
+        entityId: plan.id,
+        userId,
+        metadata: {
+          referenceNumber: plan.referenceNumber,
+          procurementMethod: plan.procurementMethod,
+          reviewType: plan.reviewType,
+          estimatedAmountUSD: plan.estimatedAmountUSD,
+          ipAddress,
+          userAgent
+        }
+      });
+
+      // Send notifications
+      await this.sendPlanCreationNotification(plan, userId);
+
+      return {
+        success: true,
+        message: 'Procurement plan created successfully',
+        plan: this.formatPlanResponse(plan)
+      };
+
+    } catch (error) {
+      logger.error('Error creating plan', { 
+        error: error.message,
+        planData 
       });
       throw new Error(`Plan creation failed: ${error.message}`);
     }
   }
 
   /**
-   * Update plan with comprehensive tracking
+   * Update plan
    */
-  static async updatePlan(planId, updateData, userId, requestInfo = {}) {
+  static async updatePlan(planId, updateData, userId = 'system', requestInfo = {}) {
     try {
       const { ipAddress, userAgent } = requestInfo;
 
-      const plan = await Plan.findById(planId);
-      if (!plan) {
+      // Get current plan
+      const currentPlan = await Plan.findById(planId);
+      if (!currentPlan) {
         throw new Error('Plan not found');
       }
 
-      // Check permissions
-      const canUpdate = await this.checkPlanPermission(plan, userId, 'update');
-      if (!canUpdate) {
-        throw new Error('Insufficient permissions to update plan');
-      }
+      // Sanitize update data
+      const sanitizedUpdates = this.sanitizePlanData(updateData);
 
-      // Track changes
-      const changeLog = this.generateChangeLog(plan, updateData, userId);
-
-      // Apply updates
-      const updatedFields = {};
-      
-      if (updateData.title) {
-        updatedFields.title = sanitize(updateData.title);
-      }
-
-      if (updateData.description) {
-        updatedFields.description = sanitize(updateData.description);
-      }
-
-      if (updateData.status && updateData.status !== plan.status) {
-        updatedFields.status = updateData.status;
-        updatedFields['lifecycle.statusHistory'] = [
-          ...plan.lifecycle.statusHistory,
-          {
-            status: updateData.status,
-            changedAt: new Date(),
-            changedBy: userId,
-            reason: updateData.statusChangeReason || 'Status update'
-          }
-        ];
-      }
-
-      if (updateData.phase && updateData.phase !== plan.phase) {
-        updatedFields.phase = updateData.phase;
-      }
-
-      if (updateData.budgetAllocation) {
-        const budgetValidation = await validateBudgetAllocation(updateData.budgetAllocation, plan.planType);
-        if (budgetValidation.valid) {
-          updatedFields['budget.totalAllocation'] = updateData.budgetAllocation.total;
-          updatedFields['budget.categories'] = this.updateBudgetCategories(plan.budget.categories, updateData.budgetAllocation.categories);
-        }
-      }
-
-      if (updateData.items) {
-        updatedFields.items = this.updateProcurementItems(plan.items, updateData.items, userId);
-      }
-
-      if (updateData.timeline) {
-        updatedFields['timeline.milestones'] = this.updateTimeline(plan.timeline.milestones, updateData.timeline.milestones, userId);
-      }
-
-      if (updateData.risks) {
-        updatedFields['risk.risks'] = this.updateRiskAssessment(plan.risk.risks, updateData.risks, userId);
-      }
-
-      // Update metadata
-      updatedFields['lifecycle.lastModified'] = new Date();
-      updatedFields['lifecycle.modifiedBy'] = userId;
-      updatedFields['lifecycle.version'] = this.incrementVersion(plan.lifecycle.version);
-      updatedFields['system.lastAccessIP'] = ipAddress;
-      updatedFields['system.lastAccessAt'] = new Date();
-      updatedFields['system.editCount'] = (plan.system.editCount || 0) + 1;
-
-      // Apply updates
-      const updatedPlan = await Plan.findByIdAndUpdate(
+      // Perform update using Plan model
+      const updatedPlan = await Plan.update(
         planId,
-        { $set: updatedFields },
-        { new: true, runValidators: true }
+        {
+          ...sanitizedUpdates,
+          updatedBy: userId,
+          updateReason: updateData.updateReason
+        },
+        currentPlan.partitionKey
       );
 
-      // Recalculate metrics if items or budget changed
-      if (updateData.items || updateData.budgetAllocation) {
-        await this.recalculatePlanMetrics(updatedPlan);
-      }
-
-      // Send notifications for significant changes
-      if (changeLog.significant) {
-        await this.sendPlanUpdateNotifications(updatedPlan, changeLog, userId);
-      }
-
       // Create audit trail
-      await auditService.logAuditEvent({
+      await this.createAuditLog({
         action: PLAN_EVENTS.UPDATED,
         entityType: 'plan',
-        entityId: plan._id,
+        entityId: planId,
         userId,
         metadata: {
-          planId: plan.planId,
-          changes: changeLog.changes,
+          referenceNumber: updatedPlan.referenceNumber,
+          changes: Object.keys(sanitizedUpdates),
           ipAddress,
           userAgent
         }
       });
 
+      // Send update notifications if significant changes
+      if (this.hasSignificantChanges(sanitizedUpdates)) {
+        await this.sendPlanUpdateNotification(updatedPlan, userId);
+      }
+
       return {
         success: true,
         message: 'Plan updated successfully',
-        plan: {
-          id: updatedPlan._id,
-          planId: updatedPlan.planId,
-          title: updatedPlan.title,
-          status: updatedPlan.status,
-          version: updatedPlan.lifecycle.version,
-          lastModified: updatedPlan.lifecycle.lastModified
-        },
-        changeLog
+        plan: this.formatPlanResponse(updatedPlan)
       };
 
     } catch (error) {
       logger.error('Error updating plan', { 
-        error: error.message, 
-        planId, 
-        updateData, 
-        userId 
+        error: error.message,
+        planId 
       });
       throw new Error(`Plan update failed: ${error.message}`);
     }
   }
 
   /**
-   * Get comprehensive plan details
+   * Get plan details
    */
-  static async getPlan(planId, userId, options = {}) {
+  static async getPlan(planId, userId = 'system', options = {}) {
     try {
       const {
-        includeHistory = false,
         includeMetrics = true,
-        includeRiskAnalysis = true,
-        includeStakeholders = true,
-        includeDocuments = false
+        includeHistory = false
       } = options;
 
-      const plan = await Plan.findById(planId)
-        .populate('stakeholders.userId', 'name email department')
-        .populate('approval.workflow.approver', 'name email role')
-        .populate('organization.departmentId', 'name code')
-        .lean();
-
+      const plan = await Plan.findById(planId);
       if (!plan) {
         throw new Error('Plan not found');
       }
 
-      // Check access permissions
-      const hasAccess = await this.checkPlanAccess(plan, userId);
-      if (!hasAccess) {
-        throw new Error('Access denied to plan');
-      }
-
-      // Build comprehensive plan response
       const response = {
-        ...plan,
-        metrics: includeMetrics ? await this.calculateCurrentMetrics(plan) : null,
-        riskAnalysis: includeRiskAnalysis ? await this.getCurrentRiskAnalysis(plan) : null,
-        timeline: {
-          ...plan.timeline,
-          progress: await this.calculateTimelineProgress(plan)
-        },
-        budget: {
-          ...plan.budget,
-          utilization: await this.calculateBudgetUtilization(plan),
-          variance: await this.calculateBudgetVariance(plan)
-        }
+        ...this.formatPlanResponse(plan),
+        metrics: includeMetrics ? await this.calculatePlanMetrics(plan) : null,
+        history: includeHistory ? await this.getPlanHistory(planId) : null
       };
-
-      if (includeHistory) {
-        response.history = await this.getPlanHistory(planId);
-      }
-
-      if (includeDocuments) {
-        response.documents = await this.getPlanDocuments(planId);
-      }
-
-      // Update access tracking
-      await this.updatePlanAccess(planId, userId);
 
       return {
         success: true,
@@ -635,9 +545,8 @@ class PlanService {
 
     } catch (error) {
       logger.error('Error getting plan', { 
-        error: error.message, 
-        planId, 
-        userId 
+        error: error.message,
+        planId 
       });
       throw new Error(`Plan retrieval failed: ${error.message}`);
     }
@@ -646,64 +555,28 @@ class PlanService {
   /**
    * Get filtered list of plans
    */
-  static async getPlans(filters = {}, userId, options = {}) {
+  static async getPlans(filters = {}, userId = 'system', options = {}) {
     try {
       const {
         page = 1,
-        limit = 20,
-        sortBy = 'createdAt',
-        sortOrder = 'desc',
-        includeMetrics = false
+        limit = 50
       } = options;
 
-      // Build query
-      const query = await this.buildPlanQuery(filters, userId);
-
-      // Execute query with pagination
-      const skip = (page - 1) * limit;
-      const sortOptions = {};
-      sortOptions[sortBy] = sortOrder === 'asc' ? 1 : -1;
-
-      const [plans, total] = await Promise.all([
-        Plan.find(query)
-          .sort(sortOptions)
-          .skip(skip)
-          .limit(limit)
-          .populate('stakeholders.userId', 'name email')
-          .populate('organization.departmentId', 'name code')
-          .lean(),
-        Plan.countDocuments(query)
-      ]);
-
-      // Process plans
-      const processedPlans = await Promise.all(
-        plans.map(async plan => ({
-          ...plan,
-          metrics: includeMetrics ? await this.calculateCurrentMetrics(plan) : null,
-          progress: await this.calculateOverallProgress(plan)
-        }))
-      );
+      const result = await Plan.getAll(filters, page, limit);
 
       return {
         success: true,
-        plans: processedPlans,
+        plans: result.items.map(p => this.formatPlanResponse(p)),
         pagination: {
-          currentPage: page,
-          totalPages: Math.ceil(total / limit),
-          totalItems: total,
-          itemsPerPage: limit,
-          hasNextPage: page < Math.ceil(total / limit),
-          hasPreviousPage: page > 1
-        },
-        summary: await this.getPlansSummary(query)
+          currentPage: result.page,
+          totalPages: result.totalPages,
+          totalItems: result.total,
+          itemsPerPage: result.limit
+        }
       };
 
     } catch (error) {
-      logger.error('Error getting plans list', { 
-        error: error.message, 
-        filters, 
-        userId 
-      });
+      logger.error('Error getting plans', { error: error.message });
       throw new Error(`Plans retrieval failed: ${error.message}`);
     }
   }
@@ -711,286 +584,472 @@ class PlanService {
   /**
    * Submit plan for approval
    */
-  static async submitPlanForApproval(planId, userId, submissionData = {}) {
+  static async submitPlanForApproval(planId, userId = 'system', submissionData = {}) {
     try {
       const plan = await Plan.findById(planId);
       if (!plan) {
         throw new Error('Plan not found');
       }
 
-      // Validate plan readiness
-      const readinessCheck = await this.validatePlanReadiness(plan);
-      if (!readinessCheck.ready) {
-        throw new Error(`Plan not ready for submission: ${readinessCheck.issues.join(', ')}`);
-      }
+      // Update status based on review type
+      const newStatus = plan.reviewType === REVIEW_TYPES.PRIOR 
+        ? PROCESS_STATUS.SUBMITTED 
+        : PROCESS_STATUS.UNDER_REVIEW;
 
-      // Update plan status
-      plan.status = PLAN_STATUS.UNDER_REVIEW;
-      plan.phase = PLANNING_PHASES.APPROVAL;
-      plan.approval.submittedAt = new Date();
-      plan.approval.overallStatus = 'under_review';
-
-      // Update lifecycle
-      plan.lifecycle.statusHistory.push({
-        status: PLAN_STATUS.UNDER_REVIEW,
-        phase: PLANNING_PHASES.APPROVAL,
-        changedAt: new Date(),
-        changedBy: userId,
-        reason: submissionData.reason || 'Submitted for approval'
-      });
-
-      await plan.save();
-
-      // Initialize approval workflow
-      const approvalResult = await approvalService.initializeApproval({
-        entityType: 'plan',
-        entityId: plan._id,
-        workflowType: 'plan_approval',
-        requestedBy: userId,
-        approvalData: {
-          planId: plan.planId,
-          planType: plan.planType,
-          totalBudget: plan.budget.totalAllocation,
-          priority: plan.priority
-        }
-      }, userId);
+      await Plan.update(planId, {
+        processStatus: newStatus,
+        activityStatus: 'Pending Approval',
+        'lifecycle.statusHistory': [
+          ...plan.metadata.auditTrail,
+          {
+            action: 'submitted_for_approval',
+            timestamp: new Date(),
+            user: userId,
+            details: submissionData.reason || 'Plan submitted for approval'
+          }
+        ],
+        updatedBy: userId
+      }, plan.partitionKey);
 
       // Send approval notifications
       await this.sendApprovalNotifications(plan, userId);
 
       // Create audit trail
-      await auditService.logAuditEvent({
+      await this.createAuditLog({
         action: PLAN_EVENTS.SUBMITTED,
         entityType: 'plan',
-        entityId: plan._id,
+        entityId: planId,
         userId,
         metadata: {
-          planId: plan.planId,
-          approvalWorkflowId: approvalResult.workflowId
+          referenceNumber: plan.referenceNumber,
+          reviewType: plan.reviewType,
+          newStatus
         }
       });
 
       return {
         success: true,
         message: 'Plan submitted for approval successfully',
-        approvalWorkflowId: approvalResult.workflowId,
-        nextApprovers: approvalResult.nextApprovers
+        reviewType: plan.reviewType,
+        requiresBankApproval: plan.reviewType === REVIEW_TYPES.PRIOR
       };
 
     } catch (error) {
       logger.error('Error submitting plan for approval', { 
-        error: error.message, 
-        planId, 
-        userId 
+        error: error.message,
+        planId 
       });
       throw new Error(`Plan submission failed: ${error.message}`);
     }
   }
 
   /**
-   * Generate comprehensive plan report
+   * Delete/Cancel plan
    */
-  static async generatePlanReport(planId, reportType = 'comprehensive', userId) {
+  static async deletePlan(planId, userId = 'system', reason = '') {
     try {
-      const plan = await Plan.findById(planId);
-      if (!plan) {
-        throw new Error('Plan not found');
-      }
+      const plan = await Plan.delete(planId, null, userId);
 
-      const reportData = {
-        plan,
-        metrics: await this.calculateCurrentMetrics(plan),
-        riskAnalysis: await this.getCurrentRiskAnalysis(plan),
-        budgetAnalysis: await this.getBudgetAnalysis(plan),
-        timelineAnalysis: await this.getTimelineAnalysis(plan),
-        stakeholderMatrix: await this.getStakeholderMatrix(plan),
-        complianceStatus: await this.getComplianceStatus(plan),
-        performanceIndicators: await this.getPerformanceIndicators(plan)
-      };
-
-      const report = await generatePlanReport(reportData, reportType);
+      // Create audit trail
+      await this.createAuditLog({
+        action: PLAN_EVENTS.CANCELLED,
+        entityType: 'plan',
+        entityId: planId,
+        userId,
+        metadata: {
+          referenceNumber: plan.referenceNumber,
+          reason
+        }
+      });
 
       return {
         success: true,
-        report
+        message: 'Plan cancelled successfully'
       };
 
     } catch (error) {
-      logger.error('Error generating plan report', { 
-        error: error.message, 
-        planId, 
-        reportType, 
-        userId 
+      logger.error('Error deleting plan', { 
+        error: error.message,
+        planId 
       });
-      throw new Error(`Report generation failed: ${error.message}`);
+      throw new Error(`Plan deletion failed: ${error.message}`);
     }
   }
 
-  // Helper methods for complex operations
-  validatePlanPeriod(period) {
-    if (!period.startDate || !period.endDate) {
-      throw new Error('Start date and end date are required');
+  /**
+   * ========================================
+   * HELPER METHODS
+   * ========================================
+   */
+
+  /**
+   * Validate STEP required fields
+   */
+  static validateSTEPFields(planData) {
+    const required = ['description', 'procurementMethod', 'category', 'estimatedAmountUSD'];
+    const missing = required.filter(field => !planData[field]);
+    
+    if (missing.length > 0) {
+      throw new Error(`Missing required STEP fields: ${missing.join(', ')}`);
     }
-    if (new Date(period.startDate) >= new Date(period.endDate)) {
-      throw new Error('End date must be after start date');
+
+    // Validate procurement method
+    if (!Object.values(PROCUREMENT_METHODS).includes(planData.procurementMethod)) {
+      throw new Error(`Invalid procurement method. Must be one of: ${Object.values(PROCUREMENT_METHODS).join(', ')}`);
+    }
+
+    // Validate review type if provided
+    if (planData.reviewType && !Object.values(REVIEW_TYPES).includes(planData.reviewType)) {
+      throw new Error(`Invalid review type. Must be 'Prior' or 'Post'`);
     }
   }
 
-  async calculatePlanMetrics(items, budget, timeline) {
+  /**
+   * Sanitize plan data
+   */
+  static sanitizePlanData(data) {
+    const sanitized = { ...data };
+    
+    if (data.description) {
+      sanitized.description = sanitize(data.description);
+    }
+    
+    if (data.specifications) {
+      sanitized.specifications = sanitize(data.specifications);
+    }
+
+    return sanitized;
+  }
+
+  /**
+   * Format plan response
+   */
+  static formatPlanResponse(plan) {
     return {
-      totalItems: items.length,
-      totalValue: items.reduce((sum, item) => sum + item.totalValue, 0),
-      averageItemValue: items.length > 0 ? items.reduce((sum, item) => sum + item.totalValue, 0) / items.length : 0,
-      highValueItems: items.filter(item => item.totalValue > 10000).length,
-      criticalItems: items.filter(item => item.priority === PRIORITY_LEVELS.CRITICAL).length,
-      totalDuration: timeline ? calculateDateDifference(timeline.startDate, timeline.endDate) : 0
+      id: plan.id,
+      referenceNumber: plan.referenceNumber,
+      description: plan.description,
+      procurementMethod: plan.procurementMethod,
+      reviewType: plan.reviewType,
+      category: plan.category,
+      processStatus: plan.processStatus,
+      estimatedAmountUSD: plan.estimatedAmountUSD,
+      loanCreditNumber: plan.loanCreditNumber,
+      component: plan.component,
+      unspscCode: plan.unspscCode,
+      workplanId: plan.workplanId,
+      createdAt: plan.createdAt,
+      updatedAt: plan.updatedAt
     };
   }
 
-  incrementVersion(currentVersion) {
-    const parts = currentVersion.split('.');
-    const patch = parseInt(parts[2] || 0) + 1;
-    return `${parts[0]}.${parts[1]}.${patch}`;
+  /**
+   * Calculate workplan summary
+   */
+  static calculateWorkplanSummary(plans) {
+    return {
+      totalPlans: plans.length,
+      totalValue: plans.reduce((sum, p) => sum + (p.estimatedAmountUSD || 0), 0),
+      byMethod: this.groupByMethod(plans),
+      byReviewType: this.groupByReviewType(plans),
+      byStatus: this.groupByStatus(plans),
+      byCategory: this.groupByCategory(plans)
+    };
   }
 
-  generateChangeLog(originalPlan, updateData, userId) {
-    const changes = [];
-    let significant = false;
-
-    // Track significant changes
-    if (updateData.status && updateData.status !== originalPlan.status) {
-      changes.push({ field: 'status', from: originalPlan.status, to: updateData.status });
-      significant = true;
-    }
-
-    if (updateData.budgetAllocation && updateData.budgetAllocation.total !== originalPlan.budget.totalAllocation) {
-      changes.push({ field: 'budget', from: originalPlan.budget.totalAllocation, to: updateData.budgetAllocation.total });
-      significant = true;
-    }
-
-    return { changes, significant, timestamp: new Date(), userId };
+  /**
+   * Group plans by method
+   */
+  static groupByMethod(plans) {
+    const grouped = {};
+    plans.forEach(plan => {
+      const method = plan.procurementMethod || 'Unknown';
+      if (!grouped[method]) {
+        grouped[method] = { count: 0, totalValue: 0 };
+      }
+      grouped[method].count++;
+      grouped[method].totalValue += plan.estimatedAmountUSD || 0;
+    });
+    return grouped;
   }
 
-  // Placeholder methods for complex operations
-  async loadPlanTemplate(templateId) { return null; }
-  async createPlanBudgetRecords(plan) { }
-  async initializeApprovalWorkflow(plan, userId) { }
-  async checkPlanPermission(plan, userId, action) { return true; }
-  async checkPlanAccess(plan, userId) { return true; }
-  async updateBudgetCategories(currentCategories, newCategories) { return currentCategories; }
-  async updateProcurementItems(currentItems, newItems, userId) { return currentItems; }
-  async updateTimeline(currentMilestones, newMilestones, userId) { return currentMilestones; }
-  async updateRiskAssessment(currentRisks, newRisks, userId) { return currentRisks; }
-  async recalculatePlanMetrics(plan) { }
-  async updatePlanAccess(planId, userId) { }
-  async calculateCurrentMetrics(plan) { return {}; }
-  async getCurrentRiskAnalysis(plan) { return {}; }
-  async calculateTimelineProgress(plan) { return 0; }
-  async calculateBudgetUtilization(plan) { return {}; }
-  async calculateBudgetVariance(plan) { return {}; }
-  async getPlanHistory(planId) { return []; }
-  async getPlanDocuments(planId) { return []; }
-  async calculateOverallProgress(plan) { return 0; }
-  async buildPlanQuery(filters, userId) { return {}; }
-  async getPlansSummary(query) { return {}; }
-  async validatePlanReadiness(plan) { return { ready: true, issues: [] }; }
-  async getBudgetAnalysis(plan) { return {}; }
-  async getTimelineAnalysis(plan) { return {}; }
-  async getStakeholderMatrix(plan) { return {}; }
-  async getComplianceStatus(plan) { return {}; }
-  async getPerformanceIndicators(plan) { return {}; }
-
-  // Notification methods
-  async sendPlanCreationNotifications(plan, userId) {
-    await notificationService.sendNotification({
-      recipients: plan.stakeholders.map(s => s.userId).filter(Boolean),
-      subject: `New Plan Created: ${plan.title}`,
-      message: `A new procurement plan "${plan.title}" has been created and requires your attention.`,
-      notificationType: 'plan',
-      priority: 'normal',
-      channels: ['email', 'in_app'],
-      procurementId: null,
-      entityType: 'plan',
-      entityId: plan._id,
-      metadata: { planId: plan.planId, planType: plan.planType }
-    }, userId);
+  /**
+   * Group plans by review type
+   */
+  static groupByReviewType(plans) {
+    const grouped = { Prior: 0, Post: 0 };
+    plans.forEach(plan => {
+      if (plan.reviewType === 'Prior') {
+        grouped.Prior++;
+      } else {
+        grouped.Post++;
+      }
+    });
+    return grouped;
   }
 
-  async sendPlanUpdateNotifications(plan, changeLog, userId) {
-    if (changeLog.significant) {
+  /**
+   * Group plans by status
+   */
+  static groupByStatus(plans) {
+    const grouped = {};
+    plans.forEach(plan => {
+      const status = plan.processStatus || 'Unknown';
+      grouped[status] = (grouped[status] || 0) + 1;
+    });
+    return grouped;
+  }
+
+  /**
+   * Group plans by category
+   */
+  static groupByCategory(plans) {
+    const grouped = {};
+    plans.forEach(plan => {
+      const category = plan.category || 'Unknown';
+      grouped[category] = (grouped[category] || 0) + 1;
+    });
+    return grouped;
+  }
+
+  /**
+   * Calculate plan metrics
+   */
+  static async calculatePlanMetrics(plan) {
+    return {
+      estimatedValue: plan.estimatedAmountUSD,
+      currency: 'USD',
+      procurementMethod: plan.procurementMethod,
+      reviewType: plan.reviewType,
+      requiresBankApproval: plan.reviewType === REVIEW_TYPES.PRIOR,
+      status: plan.processStatus,
+      createdDaysAgo: Math.floor((new Date() - new Date(plan.createdAt)) / (1000 * 60 * 60 * 24))
+    };
+  }
+
+  /**
+   * Check if updates are significant
+   */
+  static hasSignificantChanges(updates) {
+    const significantFields = [
+      'processStatus',
+      'estimatedAmountUSD',
+      'reviewType',
+      'procurementMethod'
+    ];
+    return Object.keys(updates).some(key => significantFields.includes(key));
+  }
+
+  /**
+   * Calculate approval rate
+   */
+  static calculateApprovalRate(analytics) {
+    const total = analytics.reviewTypeBreakdown.Prior || 0;
+    const approved = analytics.statusBreakdown.Cleared || 0;
+    return total > 0 ? Math.round((approved / total) * 100) : 0;
+  }
+
+  /**
+   * Calculate method distribution percentages
+   */
+  static calculateMethodDistribution(methodBreakdown, totalPlans) {
+    const distribution = {};
+    Object.keys(methodBreakdown).forEach(method => {
+      distribution[method] = {
+        count: methodBreakdown[method],
+        percentage: totalPlans > 0 ? Math.round((methodBreakdown[method] / totalPlans) * 100) : 0
+      };
+    });
+    return distribution;
+  }
+
+  /**
+   * Calculate status progression
+   */
+  static calculateStatusProgression(statusBreakdown) {
+    const progression = {
+      draft: statusBreakdown.Draft || 0,
+      inReview: (statusBreakdown.Submitted || 0) + (statusBreakdown['Under Review'] || 0),
+      cleared: statusBreakdown.Cleared || 0,
+      signed: statusBreakdown.Signed || 0,
+      canceled: statusBreakdown.Canceled || 0
+    };
+    return progression;
+  }
+
+  /**
+   * Calculate compliance score
+   */
+  static calculateComplianceScore(analytics) {
+    // Simple compliance score based on UNSPSC code presence, review type adherence, etc.
+    let score = 100;
+    
+    // Deduct points for missing UNSPSC codes (if we can track this)
+    // Deduct points for delayed approvals
+    // Deduct points for missing documentation
+    
+    return score;
+  }
+
+  /**
+   * Get plan history (placeholder)
+   */
+  static async getPlanHistory(planId) {
+    // TODO: Implement history retrieval from audit logs
+    return [];
+  }
+
+  /**
+   * ========================================
+   * NOTIFICATION METHODS
+   * ========================================
+   */
+
+  /**
+   * Send plan creation notification
+   */
+  static async sendPlanCreationNotification(plan, userId) {
+    try {
       await notificationService.sendNotification({
-        recipients: plan.stakeholders.map(s => s.userId).filter(Boolean),
-        subject: `Plan Updated: ${plan.title}`,
-        message: `Procurement plan "${plan.title}" has been updated with significant changes.`,
-        notificationType: 'plan',
+        recipients: [userId],
+        subject: `Procurement Plan Created: ${plan.referenceNumber}`,
+        message: `Plan "${plan.description}" has been created successfully.`,
+        notificationType: 'plan_created',
         priority: 'normal',
         channels: ['email', 'in_app'],
         entityType: 'plan',
-        entityId: plan._id,
-        metadata: { planId: plan.planId, changes: changeLog.changes }
+        entityId: plan.id,
+        metadata: {
+          referenceNumber: plan.referenceNumber,
+          procurementMethod: plan.procurementMethod,
+          estimatedAmountUSD: plan.estimatedAmountUSD
+        }
       }, userId);
+    } catch (error) {
+      logger.warn('Failed to send plan creation notification', { error: error.message });
     }
   }
 
-  async sendApprovalNotifications(plan, userId) {
-    const approvers = plan.approval.workflow
-      .filter(step => step.status === 'pending')
-      .map(step => step.approver)
-      .filter(Boolean);
-
-    if (approvers.length > 0) {
+  /**
+   * Send batch import notification
+   */
+  static async sendBatchImportNotification(results, sheetName, userId) {
+    try {
       await notificationService.sendNotification({
-        recipients: approvers,
-        subject: `Plan Approval Required: ${plan.title}`,
-        message: `Procurement plan "${plan.title}" has been submitted for your approval.`,
-        notificationType: 'approval',
+        recipients: [userId],
+        subject: `Excel Import Completed: ${sheetName}`,
+        message: `Batch import completed: ${results.successful}/${results.total} plans imported successfully.`,
+        notificationType: 'batch_import',
+        priority: 'normal',
+        channels: ['email', 'in_app'],
+        metadata: {
+          sheetName,
+          totalRows: results.total,
+          successful: results.successful,
+          failed: results.failed
+        }
+      }, userId);
+    } catch (error) {
+      logger.warn('Failed to send batch import notification', { error: error.message });
+    }
+  }
+
+  /**
+   * Send plan update notification
+   */
+  static async sendPlanUpdateNotification(plan, userId) {
+    try {
+      await notificationService.sendNotification({
+        recipients: [userId],
+        subject: `Plan Updated: ${plan.referenceNumber}`,
+        message: `Plan "${plan.description}" has been updated.`,
+        notificationType: 'plan_updated',
+        priority: 'normal',
+        channels: ['in_app'],
+        entityType: 'plan',
+        entityId: plan.id,
+        metadata: {
+          referenceNumber: plan.referenceNumber
+        }
+      }, userId);
+    } catch (error) {
+      logger.warn('Failed to send plan update notification', { error: error.message });
+    }
+  }
+
+  /**
+   * Send approval notifications
+   */
+  static async sendApprovalNotifications(plan, userId) {
+    try {
+      const subject = plan.reviewType === REVIEW_TYPES.PRIOR
+        ? `Bank Approval Required: ${plan.referenceNumber}`
+        : `Approval Required: ${plan.referenceNumber}`;
+
+      await notificationService.sendNotification({
+        recipients: [userId], // TODO: Get actual approvers
+        subject,
+        message: `Plan "${plan.description}" has been submitted for approval.`,
+        notificationType: 'approval_required',
         priority: 'high',
         channels: ['email', 'in_app'],
         requiresAcknowledgment: true,
         entityType: 'plan',
-        entityId: plan._id,
-        metadata: { planId: plan.planId, totalBudget: plan.budget.totalAllocation }
+        entityId: plan.id,
+        metadata: {
+          referenceNumber: plan.referenceNumber,
+          reviewType: plan.reviewType,
+          estimatedAmountUSD: plan.estimatedAmountUSD
+        }
       }, userId);
+    } catch (error) {
+      logger.warn('Failed to send approval notifications', { error: error.message });
     }
   }
 
-  // Legacy compatibility methods
-  async list(query = {}, options = {}) {
+  /**
+   * ========================================
+   * AUDIT METHODS
+   * ========================================
+   */
+
+  /**
+   * Create audit log
+   */
+  static async createAuditLog(auditData) {
+    try {
+      if (auditService && auditService.logAuditEvent) {
+        await auditService.logAuditEvent(auditData);
+      }
+    } catch (error) {
+      logger.warn('Failed to create audit log', { error: error.message });
+    }
+  }
+
+  /**
+   * ========================================
+   * LEGACY COMPATIBILITY METHODS
+   * ========================================
+   */
+
+  static async list(query = {}, options = {}) {
     return await this.getPlans(query, query.userId || 'system', options);
   }
 
-  async get(id, userId = 'system') {
+  static async get(id, userId = 'system') {
     return await this.getPlan(id, userId);
   }
 
-  async create(data, userId = 'system') {
+  static async create(data, userId = 'system') {
     return await this.createPlan(data, userId);
   }
 
-  async update(id, data, userId = 'system') {
+  static async update(id, data, userId = 'system') {
     return await this.updatePlan(id, data, userId);
   }
 
-  async remove(id, userId = 'system') {
-    try {
-      const plan = await Plan.findByIdAndUpdate(
-        id, 
-        { 
-          status: PLAN_STATUS.CANCELLED,
-          'lifecycle.lastModified': new Date(),
-          'lifecycle.modifiedBy': userId
-        },
-        { new: true }
-      );
-      
-      if (!plan) {
-        throw new Error('Plan not found');
-      }
-
-      return { success: true, message: 'Plan cancelled successfully' };
-    } catch (error) {
-      throw new Error(`Plan deletion failed: ${error.message}`);
-    }
+  static async remove(id, userId = 'system') {
+    return await this.deletePlan(id, userId);
   }
 }
 

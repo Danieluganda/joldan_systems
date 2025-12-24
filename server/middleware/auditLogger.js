@@ -517,6 +517,7 @@ const logBulkOperation = (entityType, operation) => {
   };
 };
 
+
 module.exports = {
   logCreate,
   logUpdate,
@@ -526,8 +527,3 @@ module.exports = {
   logStatusChange,
   logBulkOperation
 };
-
-    next();
-  };
-};
-module.exports = logCreate;

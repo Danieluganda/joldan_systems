@@ -4,13 +4,16 @@ import { usePermissions } from '../../hooks/usePermissions';
 import './sidebar.css';
 
 /**
- * Sidebar Component
+ * Sidebar Component - ENHANCED with STEP Features
  * 
  * Main navigation menu for the application with feature access control.
  * Displays collapsible menu items based on user permissions.
  * 
  * Features:
  * - Feature-based menu organization
+ * - STEP procurement planning (NEW)
+ * - Excel import for procurement plans (NEW)
+ * - STEP analytics and dashboards (NEW)
  * - Permission-based visibility
  * - Active route highlighting
  * - Collapsible sub-menus
@@ -22,12 +25,14 @@ const Sidebar = ({ isOpen = true, onToggle = null }) => {
   const location = useLocation();
   const { hasPermission } = usePermissions();
   const [expandedMenus, setExpandedMenus] = useState({
-    procurement: true,
+    plans: true,        // Show plans by default since it's main feature
+    procurement: false,
     templates: false,
     evaluation: false,
     approvals: false,
     awards: false,
-    audit: false
+    audit: false,
+    analytics: false
   });
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
@@ -61,9 +66,9 @@ const Sidebar = ({ isOpen = true, onToggle = null }) => {
     });
   };
 
-  // Menu structure with permissions
+  // Clean, organized menu structure
   const menuItems = [
-    // Dashboard
+    // Main Dashboard
     {
       label: 'Dashboard',
       path: '/dashboard',
@@ -71,7 +76,22 @@ const Sidebar = ({ isOpen = true, onToggle = null }) => {
       required: true
     },
 
-    // Feature 1: Planning & Setup
+    // PLANNING SECTION
+    {
+      label: 'Procurement Plans',
+      icon: '📑',
+      submenu: true,
+      menu: 'plans',
+      items: [
+        { label: 'All Plans', path: '/plans', icon: '📋' },
+        { label: 'Create Plan', path: '/plans/new', icon: '➕' },
+        { label: 'Import Excel', path: '/plans/import', icon: '📤' },
+        { label: 'Templates', path: '/plans/templates', icon: '📄' },
+        { label: 'Workplans', path: '/plans/workplans', icon: '📊' },
+        { label: 'STEP Methods', path: '/plans/methods', icon: '🔧' },
+      ]
+    },
+
     {
       label: 'Procurement Setup',
       icon: '🎯',
@@ -84,7 +104,7 @@ const Sidebar = ({ isOpen = true, onToggle = null }) => {
       ]
     },
 
-    // Feature 2: Templates & RFQ
+    // BIDDING SECTION
     {
       label: 'Templates & RFQ',
       icon: '📄',
@@ -97,7 +117,6 @@ const Sidebar = ({ isOpen = true, onToggle = null }) => {
       ]
     },
 
-    // Feature 6: Clarifications
     {
       label: 'Clarifications',
       path: '/clarifications',
@@ -105,7 +124,6 @@ const Sidebar = ({ isOpen = true, onToggle = null }) => {
       required: true
     },
 
-    // Feature 7: Submissions
     {
       label: 'Submissions',
       path: '/submissions',
@@ -113,7 +131,7 @@ const Sidebar = ({ isOpen = true, onToggle = null }) => {
       required: true
     },
 
-    // Feature 8: Evaluation
+    // EVALUATION SECTION
     {
       label: 'Evaluation & Scoring',
       icon: '⭐',
@@ -125,7 +143,7 @@ const Sidebar = ({ isOpen = true, onToggle = null }) => {
       ]
     },
 
-    // Feature 10: Approvals
+    // APPROVAL & AWARD SECTION
     {
       label: 'Approvals',
       icon: '✓',
@@ -133,11 +151,12 @@ const Sidebar = ({ isOpen = true, onToggle = null }) => {
       menu: 'approvals',
       items: [
         { label: 'Approval Queue', path: '/approvals', icon: '⏳' },
+        { label: 'Plan Approvals', path: '/approvals/plans', icon: '📑' },
+        { label: 'Bank Approvals', path: '/plans/bank-approvals', icon: '🏦' },
         { label: 'History', path: '/approvals/history', icon: '📜' },
       ]
     },
 
-    // Feature 11: Award & Contract
     {
       label: 'Award & Contract',
       icon: '🏅',
@@ -149,7 +168,7 @@ const Sidebar = ({ isOpen = true, onToggle = null }) => {
       ]
     },
 
-    // Feature 12: Audit & Compliance
+    // COMPLIANCE & REPORTING SECTION
     {
       label: 'Audit & Compliance',
       icon: '🔍',
@@ -158,10 +177,24 @@ const Sidebar = ({ isOpen = true, onToggle = null }) => {
       items: [
         { label: 'Audit Packs', path: '/audit', icon: '📦' },
         { label: 'Compliance', path: '/audit/compliance', icon: '✅' },
+        { label: 'STEP Compliance', path: '/audit/step', icon: '🎯' },
       ]
     },
 
-    // Feature 5: Documents (integrated)
+    {
+      label: 'Analytics & Reports',
+      icon: '📈',
+      submenu: true,
+      menu: 'analytics',
+      items: [
+        { label: 'Overview', path: '/analytics', icon: '📊' },
+        { label: 'STEP Analytics', path: '/analytics/step', icon: '🎯' },
+        { label: 'Budget Analytics', path: '/analytics/budget', icon: '💰' },
+        { label: 'Performance', path: '/analytics/performance', icon: '📉' },
+      ]
+    },
+
+    // DOCUMENTS & FILES
     {
       label: 'Documents',
       path: '/documents',
@@ -182,6 +215,14 @@ const Sidebar = ({ isOpen = true, onToggle = null }) => {
           {isOpen ? '◀' : '▶'}
         </button>
         {isOpen && <span className="sidebar-title">Navigation</span>}
+        
+        {/* Quick Actions in Header - Subtle */}
+        {isOpen && (
+          <div className="header-quick-actions">
+            <Link to="/plans/new" className="header-quick-btn" title="New Plan">➕</Link>
+            <Link to="/plans/import" className="header-quick-btn" title="Import">📤</Link>
+          </div>
+        )}
       </div>
 
       {/* Menu Items */}
@@ -247,31 +288,7 @@ const Sidebar = ({ isOpen = true, onToggle = null }) => {
         })}
       </nav>
      
-      {/* Quick Access */}
-      {isOpen && (
-        <div className="sidebar-quick-access">
-          <div className="quick-access-title">Quick Access</div>
-          <Link to="/procurements/new" onClick={() => handleLinkClick('/procurements/new', 'New Procurement')} className="quick-access-item primary">
-            ➕ New Procurement
-          </Link>
-          <Link to="/approvals" onClick={() => handleLinkClick('/approvals', 'Pending Approvals')} className="quick-access-item">
-            ⏳ Pending Approvals
-          </Link>
-          <Link to="/audit" onClick={() => handleLinkClick('/audit', 'Audit Packs')} className="quick-access-item">
-            📦 Audit Packs
-          </Link>
-        </div>   
-      )}
      
-      {/* Footer */}
-      {isOpen && (
-        <div className="sidebar-footer">
-          <div className="footer-item">
-            <span className="footer-icon">ℹ️</span>
-            <span className="footer-text">Help & Support</span>
-          </div>
-        </div>
-      )}
     </aside>
   );
 };

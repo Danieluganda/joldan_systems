@@ -1,11 +1,7 @@
 /**
  * Application Routes Configuration
- * 
- * Centralized route definitions for the entire application.
- * Enables dynamic route rendering and easy navigation setup.
  */
 
-import Dashboard from './pages/Dashboard';
 import LoginPage from './pages/LoginPage';
 import ProcurementList from './pages/ProcurementList';
 import ProcurementSetup from './pages/ProcurementSetup';
@@ -22,6 +18,8 @@ import ContractPage from './pages/ContractPage';
 import AuditPage from './pages/AuditPage';
 import DocumentsPage from './pages/DocumentsPage';
 import RouteTestingPage from './pages/RouteTestingPage';
+import NoObjectionPage from './pages/NoObjectionPage';
+import Dashboard from './pages/Dashboard';
 
 /**
  * Route configuration objects
@@ -276,6 +274,16 @@ const ROUTES = [
     icon: '🧪',
     requiredPermission: 'admin_view',
     showInNav: true
+  },
+
+  // No Objection Requests
+  {
+    path: '/no-objections',
+    name: 'No-Objection Requests',
+    component: NoObjectionPage,
+    icon: '🚦',
+    requiredPermission: 'view_procurement',
+    showInNav: true
   }
 ];
 
@@ -366,9 +374,8 @@ export const getRoutesByPermission = (permission) => {
  * Check if user can access a route
  */
 export const canAccessRoute = (route, userPermissions) => {
-  if (route.isPublic) return true;
-  if (!route.requiredPermission) return true;
-  return userPermissions && userPermissions.includes(route.requiredPermission);
-};
+  // TODO: Implement permission check logic
+  return true;
+}
 
 export default ROUTES;

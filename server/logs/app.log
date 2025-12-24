@@ -1,0 +1,78 @@
+[2025-12-24T07:46:44.499Z] INFO: Express application initialized
+[2025-12-24T07:46:44.502Z] INFO: Security middleware initialized
+[2025-12-24T07:46:44.503Z] INFO: Error handling initialized
+[2025-12-24T07:46:44.503Z] INFO: Monitoring initialized
+[2025-12-24T07:46:44.504Z] INFO: Server fully initialized
+[2025-12-24T07:46:44.503Z] INFO: Routes initialized
+[2025-12-24T07:49:44.555Z] INFO: Express application initialized
+[2025-12-24T07:49:44.559Z] INFO: Security middleware initialized
+[2025-12-24T07:49:44.560Z] INFO: Error handling initialized
+[2025-12-24T07:49:44.560Z] INFO: Routes initialized
+[2025-12-24T07:49:44.560Z] INFO: Server fully initialized
+[2025-12-24T07:49:44.559Z] INFO: Monitoring initialized
+[2025-12-24T07:58:24.173Z] INFO: Express application initialized
+[2025-12-24T07:58:24.181Z] INFO: Routes initialized
+[2025-12-24T07:58:24.180Z] INFO: Security middleware initialized
+[2025-12-24T07:58:24.180Z] INFO: Monitoring initialized
+[2025-12-24T07:58:24.182Z] INFO: Error handling initialized
+[2025-12-24T07:58:24.182Z] INFO: Server fully initialized
+[2025-12-24T08:09:05.522Z] INFO: Express application initialized
+[2025-12-24T08:09:05.529Z] INFO: Security middleware initialized
+[2025-12-24T08:09:05.530Z] INFO: Monitoring initialized
+[2025-12-24T08:09:05.531Z] INFO: Routes initialized
+[2025-12-24T08:09:05.532Z] INFO: Error handling initialized
+[2025-12-24T08:09:05.533Z] INFO: Server fully initialized
+[2025-12-24T08:16:02.209Z] INFO: Security middleware initialized
+[2025-12-24T08:16:02.204Z] INFO: Express application initialized
+[2025-12-24T08:16:02.209Z] INFO: Monitoring initialized
+[2025-12-24T08:16:02.210Z] INFO: Routes initialized
+[2025-12-24T08:16:02.210Z] INFO: Error handling initialized
+[2025-12-24T08:16:02.210Z] INFO: Server fully initialized
+[2025-12-24T09:21:21.818Z] INFO: Express application initialized
+[2025-12-24T09:21:21.831Z] INFO: Security middleware initialized
+[2025-12-24T09:21:21.836Z] INFO: Routes initialized
+[2025-12-24T09:21:21.839Z] INFO: Server fully initialized
+[2025-12-24T09:21:21.834Z] INFO: Monitoring initialized
+[2025-12-24T09:21:21.838Z] INFO: Error handling initialized
+[2025-12-24T09:27:50.338Z] INFO: Express application initialized
+[2025-12-24T09:27:50.340Z] INFO: Monitoring initialized
+[2025-12-24T09:27:50.340Z] INFO: Security middleware initialized
+[2025-12-24T09:27:50.340Z] INFO: Routes initialized
+[2025-12-24T09:27:50.341Z] INFO: Server fully initialized
+[2025-12-24T09:27:50.341Z] INFO: Error handling initialized
+[2025-12-24T14:18:09.330Z] INFO: Express application initialized
+[2025-12-24T14:18:09.413Z] INFO: Security middleware initialized
+[2025-12-24T14:18:09.429Z] INFO: Routes initialized
+[2025-12-24T14:18:09.427Z] INFO: Monitoring initialized
+[2025-12-24T14:18:09.436Z] INFO: Error handling initialized
+[2025-12-24T14:18:09.438Z] INFO: Server fully initialized
+[2025-12-24T15:44:26.350Z] INFO: Express application initialized
+[2025-12-24T15:44:26.357Z] INFO: Security middleware initialized
+[2025-12-24T15:44:26.358Z] INFO: Monitoring initialized
+[2025-12-24T15:44:26.360Z] INFO: Routes initialized
+[2025-12-24T15:44:26.361Z] INFO: Error handling initialized
+[2025-12-24T15:44:26.361Z] INFO: Server fully initialized
+[2025-12-24T20:23:23.445Z] INFO: Express application initialized
+[2025-12-24T20:23:23.449Z] INFO: Monitoring initialized
+[2025-12-24T20:23:23.452Z] INFO: Error handling initialized
+[2025-12-24T20:23:23.452Z] INFO: Server fully initialized
+[2025-12-24T20:23:23.451Z] INFO: Routes initialized
+[2025-12-24T20:23:23.448Z] INFO: Security middleware initialized
+[2025-12-24T20:24:48.807Z] INFO: Express application initialized
+[2025-12-24T20:24:48.810Z] INFO: Security middleware initialized
+[2025-12-24T20:24:48.810Z] INFO: Routes initialized
+[2025-12-24T20:24:48.811Z] INFO: Server fully initialized
+[2025-12-24T20:24:48.810Z] INFO: Monitoring initialized
+[2025-12-24T20:24:48.810Z] INFO: Error handling initialized
+[2025-12-24T21:12:22.992Z] INFO: Express application initialized
+[2025-12-24T21:12:22.995Z] INFO: Security middleware initialized
+[2025-12-24T21:12:22.995Z] INFO: Monitoring initialized
+[2025-12-24T21:12:22.996Z] INFO: Routes initialized
+[2025-12-24T21:12:22.996Z] INFO: Error handling initialized
+[2025-12-24T21:12:22.996Z] INFO: Server fully initialized
+[2025-12-24T21:27:11.395Z] INFO: Express application initialized
+[2025-12-24T21:27:11.404Z] INFO: Security middleware initialized
+[2025-12-24T21:27:11.406Z] INFO: Monitoring initialized
+[2025-12-24T21:27:11.408Z] INFO: Routes initialized
+[2025-12-24T21:27:11.409Z] INFO: Error handling initialized
+[2025-12-24T21:27:11.410Z] INFO: Server fully initialized

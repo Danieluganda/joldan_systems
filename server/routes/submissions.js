@@ -901,7 +901,15 @@ router.delete('/:id',
           deletedBy: req.user.id
         }
       });
-
+    } catch (error) {
+      logger.error('Error deleting submission', {
+        error: error.message,
+        stack: error.stack,
+        submissionId: req.params.id,
+        userId: req.user.id
+      });
+      next(error);
+    }
   }
 );
 

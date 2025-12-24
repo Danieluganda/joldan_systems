@@ -323,6 +323,17 @@ class ApprovalService {
       // Create audit entry
       await auditService.logApprovalCreated(approval, requesterId, session);
 
+        // Log activity
+        const { logActivity } = require('./activityLogService');
+        await logActivity({
+          user: requesterId,
+          action: 'create',
+          entityType: 'Approval',
+          entityId: approval._id,
+          details: { type: approvalData.type, value: approvalData.value },
+          ip: approvalData.ipAddress || undefined
+        });
+
       // Send notification to first approver
       await this.notifyApprover(approval, 'new_approval');
 
@@ -395,6 +406,17 @@ class ApprovalService {
         level: approval.currentLevel - 1,
         conditions
       }, session);
+
+        // Log activity
+        const { logActivity } = require('./activityLogService');
+        await logActivity({
+          user: approverId,
+          action: 'approve',
+          entityType: 'Approval',
+          entityId: approval._id,
+          details: { comments, level: approval.currentLevel - 1, conditions },
+          ip: approvalData.ipAddress || undefined
+        });
 
       // Send notifications
       if (approval.status === APPROVAL_STATUS.APPROVED) {

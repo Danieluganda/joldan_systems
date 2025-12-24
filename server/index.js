@@ -34,15 +34,11 @@ class EnterpriseApplicationServer extends EventEmitter {
                 res.status(500).json({ error: 'Internal Server Error' });
             });
         }
-            async setupAppLogging() {
-                // Log all requests to app.log
-                const { logAppEvent } = require('./utils/fileLogger');
-                if (!this.app) return;
-                this.app.use((req, res, next) => {
-                    logAppEvent(`${req.method} ${req.originalUrl} from ${req.ip}`);
-                    next();
-                });
-            }
+        // Log a general application event
+        logEvent(message) {
+            const { logAppEvent } = require('./utils/fileLogger');
+            logAppEvent(message);
+        }
     constructor(options = {}) {
         super();
         
@@ -156,6 +152,10 @@ class EnterpriseApplicationServer extends EventEmitter {
     async setupRoutes() {
         if (!this.app) return;
 
+        // Planning API
+        this.app.use('/api/planning', require('./routes/planning'));
+        // Roadmap API
+        this.app.use('/api/roadmap', require('./routes/roadmap'));
         // Logs API
             this.app.get('/api/logs', (req, res) => {
                 // In a real implementation, read log files from disk
@@ -167,9 +167,29 @@ class EnterpriseApplicationServer extends EventEmitter {
                 });
             });
 
+
             this.app.post('/api/logs', (req, res) => {
-                // In a real implementation, save logs to disk
-                res.status(201).json({ success: true, message: 'Logs received.' });
+                // Write frontend logs to frontend.log
+                try {
+                    const { logFrontendEvent } = require('./utils/fileLogger');
+                    // Accepts either a string or an object/array
+                    let { message, level } = req.body || {};
+                    if (!message && typeof req.body === 'string') {
+                        message = req.body;
+                    }
+                    if (!message && Array.isArray(req.body)) {
+                        message = JSON.stringify(req.body);
+                    }
+                    if (!message) {
+                        message = JSON.stringify(req.body);
+                    }
+                    logFrontendEvent(message, level || 'info');
+                    res.status(201).json({ success: true, message: 'Logs received and written to file.' });
+                } catch (err) {
+                    // eslint-disable-next-line no-console
+                    console.error('Failed to write frontend log:', err);
+                    res.status(500).json({ success: false, error: 'Failed to write frontend log.' });
+                }
             });
 
             this.app.get('/api/logs/:filename', (req, res) => {
@@ -286,25 +306,28 @@ class EnterpriseApplicationServer extends EventEmitter {
             
             // Setup Express application
             await this.setupExpress();
-            
+            this.logEvent('Express application initialized');
+
             // Setup security middleware
             await this.setupSecurity();
-            
+            this.logEvent('Security middleware initialized');
+
             // Setup monitoring
             await this.setupMonitoring();
-            
+            this.logEvent('Monitoring initialized');
+
             // Setup routes
             await this.setupRoutes();
-
-            // Setup application logging (after routes, before error handling)
-            await this.setupAppLogging();
+            this.logEvent('Routes initialized');
 
             // Setup error handling
             await this.setupErrorHandling();
-            
+            this.logEvent('Error handling initialized');
+
             this.healthStatus = 'initialized';
             this.emit('server:initialized');
-            
+            this.logEvent('Server fully initialized');
+
             return true;
             
         } catch (error) {

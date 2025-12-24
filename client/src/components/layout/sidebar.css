@@ -1,17 +1,46 @@
+/* ============================================
+   SIDEBAR - YOUR EXISTING STYLES + STEP ENHANCEMENTS
+   ============================================ */
+
+/* FIXED SIDEBAR - Remove double spacing issue */
+
 .sidebar {
-  background: linear-gradient(180deg, #1e293b 0%, #2d3f53 100%);
+  /* ENHANCED: Brighter, more visible gradient */
+  background: linear-gradient(180deg, #1e3a5f 0%, #2d4a6e 100%);
   color: #e2e8f0;
   width: 250px;
   display: flex;
   flex-direction: column;
   padding: 0;
-  box-shadow: 4px 0 16px rgba(0, 0, 0, 0.25);
-  overflow-y: auto;
+  /* ENHANCED: Stronger shadow for better visibility */
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.4), 2px 0 8px rgba(0, 0, 0, 0.2);
+  overflow-y: hidden !important;
+  /* FIXED: Only menu scrolls, not entire sidebar */
+  overflow-x: hidden;
   transition: all 0.3s ease;
   flex-shrink: 0;
-  border-right: 1px solid rgba(148, 163, 184, 0.1);
-  height: calc(100vh - 75px);
-  margin-top: 75px;
+  /* ENHANCED: More visible border */
+  border-right: 2px solid rgba(100, 182, 246, 0.3);
+
+  /* FIXED: Absolute positioning within app-container to fit between navbar and footer */
+  position: absolute !important;
+  /* Changed from fixed to absolute */
+  top: 0 !important;
+  /* Top of app-container (which starts at navbar height) */
+  left: 0 !important;
+  /* Align to left */
+  bottom: 0 !important;
+  /* Extend to bottom of app-container (before footer) */
+  height: auto !important;
+  /* Auto height to fit container */
+  z-index: 500 !important;
+  /* ENHANCED: Higher z-index for better layering (below navbar 1000, above content) */
+}
+
+.sidebar.closed {
+  transform: translateX(-100%);
+  width: 0;
+  padding: 0;
 }
 
 .sidebar.closed {
@@ -28,7 +57,8 @@
   align-items: center;
   gap: 0.75rem;
   flex-shrink: 0;
-  background: rgba(15, 23, 42, 0.4);
+  /* ENHANCED: Brighter background for better visibility */
+  background: rgba(30, 58, 95, 0.6);
 }
 
 .sidebar-toggle {
@@ -69,12 +99,23 @@
 .sidebar-menu {
   list-style: none;
   padding: 1rem 0;
+  /* ENHANCED: Extra bottom padding to ensure last items are visible */
+  padding-bottom: 2rem;
   margin: 0;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   flex: 1;
+  /* CRITICAL: Enable scrolling for long menus */
   overflow-y: auto;
+  overflow-x: hidden;
+  /* ENHANCED: Ensure menu takes available space and scrolls */
+  min-height: 0;
+  max-height: 100%;
+  /* Smooth scrolling */
+  scroll-behavior: smooth;
+  /* Better scroll performance */
+  -webkit-overflow-scrolling: touch;
 }
 
 .menu-section {
@@ -135,11 +176,24 @@
   justify-content: center;
   font-size: 1.1rem;
   flex-shrink: 0;
+  transition: transform 0.2s ease;
+  /* ENHANCED: Added animation */
+}
+
+/* ENHANCED: Icon zoom on hover */
+.menu-item:hover .menu-icon {
+  transform: scale(1.1);
 }
 
 .menu-label {
   flex: 1;
   white-space: nowrap;
+  display: flex;
+  /* ENHANCED: For badge layout */
+  align-items: center;
+  /* ENHANCED: For badge alignment */
+  gap: 0.5rem;
+  /* ENHANCED: Space for badges */
 }
 
 .submenu-arrow {
@@ -160,8 +214,24 @@
   display: flex;
   flex-direction: column;
   gap: 0;
-  background: rgba(15, 23, 42, 0.4);
-  border-left: 2px solid rgba(100, 182, 246, 0.2);
+  /* ENHANCED: Brighter background for better visibility */
+  background: rgba(20, 40, 70, 0.5);
+  border-left: 2px solid rgba(100, 182, 246, 0.3);
+  animation: submenu-expand 0.25s ease-out;
+  /* ENHANCED: Added animation */
+}
+
+/* ENHANCED: Submenu expand animation */
+@keyframes submenu-expand {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+
+  to {
+    opacity: 1;
+    max-height: 600px;
+  }
 }
 
 .submenu-item {
@@ -191,6 +261,11 @@
   font-weight: 600;
 }
 
+/* ENHANCED: Submenu icon zoom */
+.submenu-item:hover .submenu-icon {
+  transform: scale(1.08);
+}
+
 .submenu-icon {
   width: 16px;
   height: 16px;
@@ -199,11 +274,19 @@
   justify-content: center;
   font-size: 0.9rem;
   flex-shrink: 0;
+  transition: transform 0.2s ease;
+  /* ENHANCED: Added animation */
 }
 
 .submenu-label {
   flex: 1;
   white-space: nowrap;
+  display: flex;
+  /* ENHANCED: For badge layout */
+  align-items: center;
+  /* ENHANCED: For badge alignment */
+  gap: 0.5rem;
+  /* ENHANCED: Space for badges */
 }
 
 .sidebar-quick-access {
@@ -211,7 +294,8 @@
   border-top: 1px solid rgba(148, 163, 184, 0.15);
   border-bottom: 1px solid rgba(148, 163, 184, 0.15);
   flex-shrink: 0;
-  background: rgba(15, 23, 42, 0.2);
+  /* ENHANCED: Brighter background for better visibility */
+  background: rgba(30, 58, 95, 0.4);
 }
 
 .quick-access-title {
@@ -257,12 +341,15 @@
 .quick-access-item.primary:hover {
   background: linear-gradient(135deg, rgba(100, 182, 246, 0.35) 0%, rgba(100, 182, 246, 0.25) 100%);
   border-color: rgba(100, 182, 246, 0.5);
+  box-shadow: 0 4px 12px rgba(100, 182, 246, 0.2);
+  /* ENHANCED: Added shadow */
 }
 
 .sidebar-footer {
   padding: 1rem 1.5rem;
   border-top: 1px solid rgba(148, 163, 184, 0.15);
-  background: rgba(15, 23, 42, 0.6);
+  /* ENHANCED: Brighter background for better visibility */
+  background: rgba(30, 58, 95, 0.7);
   font-size: 0.85rem;
   color: #a1aec6;
   flex-shrink: 0;
@@ -312,6 +399,22 @@
   .sidebar.closed {
     transform: translateX(-100%);
   }
+
+  /* ENHANCED: Footer stats vertical on mobile */
+  .footer-stats {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .stat-item {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .stat-label {
+    text-align: right;
+  }
 }
 
 @media (max-width: 480px) {
@@ -349,6 +452,26 @@
     padding: 0.65rem 0.75rem;
     font-size: 0.85rem;
   }
+
+  /* ENHANCED: Smaller badges on mobile */
+  .menu-badge,
+  .submenu-badge {
+    font-size: 8px;
+    padding: 2px 5px;
+  }
+
+  /* ENHANCED: Mobile stats styling */
+  .footer-stats {
+    padding: 0.75rem;
+  }
+
+  .stat-value {
+    font-size: 1rem;
+  }
+
+  .stat-label {
+    font-size: 0.65rem;
+  }
 }
 
 /* ============================================
@@ -372,6 +495,32 @@
   background: rgba(100, 182, 246, 0.5);
 }
 
+/* ENHANCED: Menu scrollbar styling - MORE VISIBLE */
+.sidebar-menu::-webkit-scrollbar {
+  width: 8px;
+  /* Wider for better visibility */
+}
+
+.sidebar-menu::-webkit-scrollbar-track {
+  background: rgba(30, 58, 95, 0.3);
+  /* Visible track */
+  border-radius: 4px;
+  margin: 4px 0;
+}
+
+.sidebar-menu::-webkit-scrollbar-thumb {
+  background: rgba(100, 182, 246, 0.5);
+  /* Brighter, more visible */
+  border-radius: 4px;
+  border: 2px solid rgba(30, 58, 95, 0.3);
+  /* Padding effect */
+}
+
+.sidebar-menu::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 182, 246, 0.7);
+  /* Even brighter on hover */
+}
+
 /* ============================================
    PRINT STYLES
    ============================================ */
@@ -380,4 +529,236 @@
   .sidebar {
     display: none;
   }
+}
+
+/* ============================================
+   NEW: BADGE SYSTEM FOR STEP FEATURES
+   ============================================ */
+
+.menu-badge,
+.submenu-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 7px;
+  font-size: 9px;
+  font-weight: 700;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-left: auto;
+  flex-shrink: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  animation: badge-pulse 2.5s ease-in-out infinite;
+}
+
+/* Default badge - NEW features */
+.menu-badge {
+  background: linear-gradient(135deg, #64b5f6 0%, #4a9fd8 100%);
+  color: white;
+}
+
+.submenu-badge {
+  background: linear-gradient(135deg, #64b5f6 0%, #4a9fd8 100%);
+  color: white;
+  font-size: 8px;
+  padding: 2px 6px;
+}
+
+/* Badge pulse animation */
+@keyframes badge-pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.85;
+    transform: scale(0.97);
+  }
+}
+
+/* Badge color variants */
+.badge-excel,
+.menu-badge[data-type="excel"],
+.submenu-badge[data-type="excel"] {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+}
+
+.badge-prior,
+.menu-badge[data-type="prior"],
+.submenu-badge[data-type="prior"] {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+}
+
+.badge-new,
+.menu-badge[data-type="new"],
+.submenu-badge[data-type="new"] {
+  background: linear-gradient(135deg, #64b5f6 0%, #4a9fd8 100%) !important;
+}
+
+/* ============================================
+   NEW: FOOTER STATS WIDGET
+   ============================================ */
+
+.footer-stats {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding: 0.875rem;
+  background: rgba(100, 116, 139, 0.12);
+  border-radius: 8px;
+  border: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+.stat-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.625rem;
+  /* ENHANCED: Brighter background for better visibility */
+  background: rgba(20, 40, 70, 0.6);
+  border-radius: 6px;
+  cursor: help;
+  transition: all 0.25s ease;
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  position: relative;
+}
+
+.stat-item:hover {
+  background: rgba(100, 182, 246, 0.08);
+  border-color: rgba(100, 182, 246, 0.2);
+  transform: translateY(-2px);
+}
+
+.stat-icon {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.stat-value {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #64b5f6;
+  line-height: 1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  color: #a1aec6;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+/* Tooltip for stats */
+.stat-item[title]:hover::before {
+  content: attr(title);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem 0.75rem;
+  background: rgba(15, 23, 42, 0.95);
+  color: #cbd5e1;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  border-radius: 6px;
+  opacity: 1;
+  pointer-events: none;
+  border: 1px solid rgba(100, 182, 246, 0.3);
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Tooltip arrow */
+.stat-item[title]:hover::after {
+  content: '';
+  position: absolute;
+  bottom: calc(100% + 2px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid rgba(15, 23, 42, 0.95);
+  z-index: 1001;
+}
+
+/* ============================================
+   NEW: ENHANCED ANIMATIONS
+   ============================================ */
+
+/* Active state glow */
+@keyframes activeGlow {
+
+  0%,
+  100% {
+    box-shadow: inset 3px 0 0 #64b5f6, 0 0 8px rgba(100, 182, 246, 0.3);
+  }
+
+  50% {
+    box-shadow: inset 3px 0 0 #64b5f6, 0 0 15px rgba(100, 182, 246, 0.5);
+  }
+}
+
+.menu-item.active,
+.submenu-item.active {
+  animation: activeGlow 3s ease-in-out infinite;
+}
+
+/* Slide-in animation */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.sidebar:not(.closed) {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* ============================================
+   NEW: ACCESSIBILITY ENHANCEMENTS
+   ============================================ */
+
+.menu-item:focus,
+.submenu-item:focus,
+.quick-access-item:focus,
+.sidebar-toggle:focus,
+.footer-item:focus,
+.stat-item:focus {
+  outline: 2px solid #64b5f6;
+  outline-offset: 2px;
+}
+
+.menu-item:focus-visible,
+.submenu-item:focus-visible {
+  background: rgba(100, 182, 246, 0.12);
+}
+
+/* ============================================
+   NEW: UTILITY CLASSES
+   ============================================ */
+
+/* For mobile/desktop detection */
+.sidebar.mobile {
+  position: fixed;
+  z-index: 999;
+}
+
+.sidebar.desktop {
+  position: relative;
 }

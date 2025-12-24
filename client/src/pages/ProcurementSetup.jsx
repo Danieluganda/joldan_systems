@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 
+
 export default function ProcurementSetup() {
 	const [procurementName, setProcurementName] = useState('');
 	const [procurementType, setProcurementType] = useState('goods');
+	const [procurementMethod, setProcurementMethod] = useState('rfq');
 	const [budget, setBudget] = useState('');
 	const [startDate, setStartDate] = useState('');
 	const [endDate, setEndDate] = useState('');
@@ -29,6 +31,7 @@ export default function ProcurementSetup() {
 				body: JSON.stringify({
 					name: procurementName,
 					type: procurementType,
+					method: procurementMethod,
 					budget: parseFloat(budget),
 					startDate,
 					endDate,
@@ -43,6 +46,7 @@ export default function ProcurementSetup() {
 				setBudget('');
 				setStartDate('');
 				setEndDate('');
+				setProcurementMethod('rfq');
 			}
 		} catch (error) {
 			console.error('Error creating procurement:', error);
@@ -57,7 +61,7 @@ export default function ProcurementSetup() {
 					<section style={{ marginTop: '30px', padding: '30px', border: '1px solid #ddd', borderRadius: '8px', background: '#fafafa' }}>
 						<h3>Create New Procurement</h3>
 						<form onSubmit={handleCreateProcurement}>
-							<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
+			<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
 								<div>
 									<label><strong>Procurement Name *</strong></label>
 									<input
@@ -79,6 +83,18 @@ export default function ProcurementSetup() {
 										{procurementTypes.map((type) => (
 											<option key={type.value} value={type.value}>{type.label}</option>
 										))}
+									</select>
+								</div>
+								<div>
+									<label><strong>Procurement Method *</strong></label>
+									<select
+										value={procurementMethod}
+										onChange={(e) => setProcurementMethod(e.target.value)}
+										style={{ padding: '10px', width: '100%', marginTop: '5px', border: '1px solid #ddd', borderRadius: '4px' }}
+									>
+										<option value="rfq">RFQ (Request for Quotation)</option>
+										<option value="direct">Direct Procurement</option>
+										<option value="single">Single Sourcing</option>
 									</select>
 								</div>
 								<div>

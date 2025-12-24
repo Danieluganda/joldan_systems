@@ -288,7 +288,9 @@
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Demo Section */
@@ -955,7 +957,7 @@
   font-weight: 500;
 }
 
-.task-item input[type="checkbox"]:checked + span {
+.task-item input[type="checkbox"]:checked+span {
   color: #999;
   text-decoration: line-through;
 }
@@ -1071,7 +1073,8 @@
   flex-direction: column;
   min-height: calc(100vh - 75px);
   background: #f5f7fa;
-  margin-top: 75px;
+  margin-top: 0;
+  /* FIXED: Removed margin-top to prevent double spacing */
   padding: 0;
 }
 
@@ -1291,7 +1294,9 @@
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .btn {
@@ -1410,4 +1415,4 @@
     padding: 2rem 1rem;
     min-height: 200px;
   }
-
+}

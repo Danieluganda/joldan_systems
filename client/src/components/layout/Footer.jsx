@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import './footer.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faXTwitter, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+
 
 /**
  * Footer Component
@@ -169,6 +172,7 @@ const Footer = ({ version = '1.0.0', statusPage = null }) => {
         </div>
 
         {/* Column 5: Contact Info */}
+        
         <div className="footer-column">
           <div 
             className="footer-column-header"
@@ -201,7 +205,7 @@ const Footer = ({ version = '1.0.0', statusPage = null }) => {
           </div>
         </div>
       </div>
-
+      
       {/* Bottom Bar */}
       <div className="footer-bottom">
         <div className="footer-left">
@@ -224,19 +228,19 @@ const Footer = ({ version = '1.0.0', statusPage = null }) => {
           </div>
         </div>
 
-        <div className="footer-right">
-          <div className="social-links">
-            <a href="https://twitter.com" title="Twitter" target="_blank" rel="noopener noreferrer">
-              🐦
-            </a>
-            <a href="https://linkedin.com" title="LinkedIn" target="_blank" rel="noopener noreferrer">
-              💼
-            </a>
-            <a href="https://github.com" title="GitHub" target="_blank" rel="noopener noreferrer">
-              🔗
-            </a>
-          </div>
+      <div className="footer-right">
+        <div className="social-links">
+          <a href="https://x.com" title="X (Twitter)" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faXTwitter} size="lg" />
+          </a>
+          <a href="https://linkedin.com" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faLinkedin} size="lg" />
+          </a>
+          <a href="https://github.com" title="GitHub" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faGithub} size="lg" />
+          </a>
         </div>
+      </div>
       </div>
 
       {/* Accessibility Notice */}
