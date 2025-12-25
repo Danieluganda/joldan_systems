@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Procurement System...</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+        }
+
+        .loading-container {
+            text-align: center;
+            max-width: 400px;
+            padding: 40px;
+        }
+
+        .logo {
+            font-size: 48px;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        .title {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        .status {
+            margin-top: 20px;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .features {
+            margin-top: 40px;
+            text-align: left;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .features ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .features li {
+            margin: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-container">
+        <div class="logo">📋</div>
+        <div class="title">Procurement System</div>
+        <div class="subtitle">Self-Updating Desktop Application</div>
+        
+        <div class="spinner"></div>
+        <div class="status" id="status">Starting application...</div>
+        
+        <div class="features">
+            <h4>Features Loading:</h4>
+            <ul>
+                <li>RFQ Management System</li>
+                <li>Vendor Communication Tools</li>
+                <li>Evaluation & Scoring Engine</li>
+                <li>Award & Contract Management</li>
+                <li>Comprehensive Audit Trail</li>
+                <li>Auto-Update Technology</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const statusElement = document.getElementById('status');
+        const statuses = [
+            'Checking for updates...',
+            'Starting development server...',
+            'Loading application modules...',
+            'Initializing procurement engine...',
+            'Preparing user interface...',
+            'Almost ready...'
+        ];
+        
+        let currentStatus = 0;
+        
+        setInterval(() => {
+            statusElement.textContent = statuses[currentStatus];
+            currentStatus = (currentStatus + 1) % statuses.length;
+        }, 2000);
+    </script>
+</body>
+</html>

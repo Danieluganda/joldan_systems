@@ -1,0 +1,44 @@
+{
+  "appId": "com.procurement.system",
+  "productName": "Procurement System",
+  "directories": {
+    "output": "dist-desktop"
+  },
+  "files": [
+    "desktop-app.js",
+    "loading.html",
+    "package.json",
+    "client/**/*",
+    "server/**/*",
+    "shared/**/*",
+    "!client/node_modules",
+    "!server/node_modules",
+    "!**/.git",
+    "!**/logs"
+  ],
+  "win": {
+    "target": [
+      {
+        "target": "nsis",
+        "arch": ["x64"]
+      }
+    ],
+    "icon": "assets/icon.ico"
+  },
+  "nsis": {
+    "oneClick": false,
+    "perMachine": true,
+    "allowToChangeInstallationDirectory": true,
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true,
+    "shortcutName": "Procurement System"
+  },
+  "mac": {
+    "target": "dmg",
+    "icon": "assets/icon.icns"
+  },
+  "linux": {
+    "target": "AppImage",
+    "icon": "assets/icon.png"
+  }
+}
