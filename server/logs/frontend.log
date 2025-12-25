@@ -15778,3 +15778,27 @@
   URL: /dashboard
   UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
   Data: {"type":"console.log"}
+[2025-12-25T18:38:43.386Z] INFO: 📤 Sent 1 logs to server
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-25T18:38:43.392Z] INFO: 📤 Sent 1 logs to server
+  URL: /dashboard
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-25T18:39:43.387Z] INFO: 📤 Sent 1 logs to server
+  URL: /dashboard
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-25T18:39:43.384Z] INFO: 📤 Sent 1 logs to server
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-25T18:40:43.377Z] INFO: 📤 Sent 1 logs to server
+  URL: /dashboard
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
+[2025-12-25T18:40:43.379Z] INFO: 📤 Sent 1 logs to server
+  URL: /documents
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Data: {"type":"console.log"}
