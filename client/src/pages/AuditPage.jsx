@@ -1,218 +1,581 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import StandardLayout from '../components/layout/StandardLayout';
+import './pages.css';
 
 export default function AuditPage() {
-	const [selectedProcurement, setSelectedProcurement] = useState(null);
-	const [includeDocuments, setIncludeDocuments] = useState(true);
-	const [includeApprovals, setIncludeApprovals] = useState(true);
-	const [includeEvaluations, setIncludeEvaluations] = useState(true);
-	const [generating, setGenerating] = useState(false);
+  const [activeView, setActiveView] = useState('overview');
+  const [selectedProcurement, setSelectedProcurement] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [statusFilter, setStatusFilter] = useState('all');
+  const [riskFilter, setRiskFilter] = useState('all');
+  const [showModal, setShowModal] = useState(false);
+  const [generating, setGenerating] = useState(false);
 
-	const mockProcurements = [
-		{
-			id: 1,
-			name: 'Office Equipment Q1 2025',
-			status: 'Completed',
-			startDate: '2025-01-01',
-			endDate: '2025-02-15',
-			documentsCount: 12,
-			approvalsCount: 5,
-			evaluationsCount: 3
-		},
-		{
-			id: 2,
-			name: 'IT Infrastructure Upgrade',
-			status: 'Active',
-			startDate: '2025-01-10',
-			endDate: '2025-03-30',
-			documentsCount: 8,
-			approvalsCount: 3,
-			evaluationsCount: 2
-		},
-		{
-			id: 3,
-			name: 'Consulting Services',
-			status: 'Planning',
-			startDate: '2025-02-01',
-			endDate: '2025-04-15',
-			documentsCount: 4,
-			approvalsCount: 1,
-			evaluationsCount: 0
-		}
-	];
+  // Comprehensive audit data - STEP methodology compliant
+  const [audits] = useState([
+    {
+      id: 'AUDIT-2025-001',
+      procurementRef: 'PROC-2025-001',
+      title: 'Road Infrastructure Rehabilitation Project - Phase 1',
+      auditType: 'Compliance Audit',
+      status: 'completed',
+      riskLevel: 'high',
+      auditedBy: 'Elena Rodriguez',
+      auditDate: '2025-12-20',
+      completionDate: '2025-12-22',
+      findingsCount: 8,
+      criticalFindings: 2,
+      majorFindings: 3,
+      minorFindings: 3,
+      complianceScore: 75,
+      recommendationsCount: 12,
+      procurementValue: 2500000,
+      stage: 'Contract Award',
+      nextReviewDate: '2026-03-20',
+      auditDuration: '3 days',
+      documentsReviewed: 45,
+      approvalChainLength: 8
+    },
+    {
+      id: 'AUDIT-2025-002',
+      procurementRef: 'PROC-2024-089',
+      title: 'Medical Equipment Procurement',
+      auditType: 'Financial Audit',
+      status: 'in_progress',
+      riskLevel: 'medium',
+      auditedBy: 'Michael Chen',
+      auditDate: '2025-12-18',
+      completionDate: null,
+      findingsCount: 4,
+      criticalFindings: 0,
+      majorFindings: 1,
+      minorFindings: 3,
+      complianceScore: 88,
+      recommendationsCount: 6,
+      procurementValue: 850000,
+      stage: 'Evaluation',
+      nextReviewDate: '2026-01-15',
+      auditDuration: 'Ongoing',
+      documentsReviewed: 32,
+      approvalChainLength: 5
+    },
+    {
+      id: 'AUDIT-2025-003',
+      procurementRef: 'PROC-2025-003',
+      title: 'IT Infrastructure Upgrade',
+      auditType: 'Process Audit',
+      status: 'scheduled',
+      riskLevel: 'low',
+      auditedBy: 'Sarah Johnson',
+      auditDate: '2025-12-30',
+      completionDate: null,
+      findingsCount: 0,
+      criticalFindings: 0,
+      majorFindings: 0,
+      minorFindings: 0,
+      complianceScore: null,
+      recommendationsCount: 0,
+      procurementValue: 450000,
+      stage: 'Planning',
+      nextReviewDate: '2026-02-28',
+      auditDuration: 'Planned: 2 days',
+      documentsReviewed: 0,
+      approvalChainLength: 4
+    },
+    {
+      id: 'AUDIT-2025-004',
+      procurementRef: 'PROC-2024-078',
+      title: 'Construction Materials Supply',
+      auditType: 'Risk Assessment',
+      status: 'draft',
+      riskLevel: 'high',
+      auditedBy: 'David Martinez',
+      auditDate: '2025-12-28',
+      completionDate: null,
+      findingsCount: 0,
+      criticalFindings: 0,
+      majorFindings: 0,
+      minorFindings: 0,
+      complianceScore: null,
+      recommendationsCount: 0,
+      procurementValue: 1200000,
+      stage: 'Tendering',
+      nextReviewDate: '2026-01-28',
+      auditDuration: 'Draft stage',
+      documentsReviewed: 0,
+      approvalChainLength: 6
+    },
+    {
+      id: 'AUDIT-2024-095',
+      procurementRef: 'PROC-2024-095',
+      title: 'Emergency Response Equipment',
+      auditType: 'Emergency Audit',
+      status: 'under_review',
+      riskLevel: 'high',
+      auditedBy: 'Lisa Brown',
+      auditDate: '2025-12-15',
+      completionDate: '2025-12-17',
+      findingsCount: 6,
+      criticalFindings: 1,
+      majorFindings: 2,
+      minorFindings: 3,
+      complianceScore: 82,
+      recommendationsCount: 9,
+      procurementValue: 890000,
+      stage: 'Implementation',
+      nextReviewDate: '2026-01-17',
+      auditDuration: '2 days',
+      documentsReviewed: 28,
+      approvalChainLength: 7
+    }
+  ]);
 
-	const handleGeneratePack = async () => {
-		if (!selectedProcurement) {
-			alert('Please select a procurement');
-			return;
-		}
+  // Audit statistics
+  const stats = {
+    totalAudits: audits.length,
+    completedAudits: audits.filter(a => a.status === 'completed').length,
+    inProgressAudits: audits.filter(a => a.status === 'in_progress').length,
+    highRiskAudits: audits.filter(a => a.riskLevel === 'high').length,
+    avgComplianceScore: Math.round(audits.filter(a => a.complianceScore).reduce((sum, a) => sum + a.complianceScore, 0) / audits.filter(a => a.complianceScore).length),
+    totalFindings: audits.reduce((sum, a) => sum + a.findingsCount, 0),
+    criticalFindings: audits.reduce((sum, a) => sum + a.criticalFindings, 0),
+    totalValue: audits.reduce((sum, a) => sum + a.procurementValue, 0)
+  };
 
-		setGenerating(true);
-		try {
-			const response = await fetch('/api/audits/generate', {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({
-					procurementId: selectedProcurement,
-					includeDocuments,
-					includeApprovals,
-					includeEvaluations
-				})
-			});
-			if (response.ok) {
-				const data = await response.json();
-				// Trigger download
-				const element = document.createElement('a');
-				element.href = data.downloadUrl;
-				element.download = data.filename;
-				document.body.appendChild(element);
-				element.click();
-				document.body.removeChild(element);
-			}
-		} catch (error) {
-			console.error('Error generating audit pack:', error);
-		} finally {
-			setGenerating(false);
-		}
-	};
+  // Filter audits
+  const filteredAudits = audits.filter(audit => {
+    const matchesSearch = audit.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         audit.procurementRef.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         audit.auditedBy.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesStatus = statusFilter === 'all' || audit.status === statusFilter;
+    const matchesRisk = riskFilter === 'all' || audit.riskLevel === riskFilter;
+    return matchesSearch && matchesStatus && matchesRisk;
+  });
 
-	const selectedProc = mockProcurements.find(p => p.id === selectedProcurement);
+  // Status configurations
+  const statusConfig = {
+    draft: { label: 'Draft', color: '#6b7280', bg: '#f9fafb', icon: '📝' },
+    scheduled: { label: 'Scheduled', color: '#f59e0b', bg: '#fef3c7', icon: '📅' },
+    in_progress: { label: 'In Progress', color: '#3b82f6', bg: '#dbeafe', icon: '🔄' },
+    under_review: { label: 'Under Review', color: '#8b5cf6', bg: '#ede9fe', icon: '👁️' },
+    completed: { label: 'Completed', color: '#10b981', bg: '#d1fae5', icon: '✅' }
+  };
 
-	return (
-		<div style={{ padding: '30px' }}>
-					<h1>📦 Audit Pack</h1>
-					<p>Generate and download audit-ready packs containing procurement history, documents, and approvals.</p>
+  // Risk level configurations
+  const riskConfig = {
+    low: { label: 'Low Risk', color: '#10b981', bg: '#d1fae5', icon: '🟢' },
+    medium: { label: 'Medium Risk', color: '#f59e0b', bg: '#fef3c7', icon: '🟡' },
+    high: { label: 'High Risk', color: '#ef4444', bg: '#fee2e2', icon: '🔴' }
+  };
 
-					<section style={{ marginTop: '30px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px' }}>
-						{/* Left: Procurement Selection */}
-						<div style={{ padding: '20px', border: '1px solid #ddd', borderRadius: '8px' }}>
-							<h3>Select Procurement</h3>
-							<div style={{ marginTop: '15px' }}>
-								{mockProcurements.map((proc) => (
-									<div
-										key={proc.id}
-										onClick={() => setSelectedProcurement(proc.id)}
-										style={{
-											padding: '15px',
-											border: selectedProcurement === proc.id ? '2px solid #007bff' : '1px solid #eee',
-											borderRadius: '4px',
-											marginBottom: '10px',
-											background: selectedProcurement === proc.id ? '#e7f3ff' : '#fafafa',
-											cursor: 'pointer'
-										}}
-									>
-										<h4 style={{ margin: '0 0 5px 0' }}>{proc.name}</h4>
-										<p style={{ margin: '0', fontSize: '12px', color: '#666' }}>
-											Status: <strong>{proc.status}</strong> | {proc.startDate} to {proc.endDate}
-										</p>
-									</div>
-								))}
-							</div>
-						</div>
+  // Audit type configurations
+  const auditTypeConfig = {
+    'Compliance Audit': { icon: '📋', color: '#3b82f6' },
+    'Financial Audit': { icon: '💰', color: '#10b981' },
+    'Process Audit': { icon: '⚙️', color: '#8b5cf6' },
+    'Risk Assessment': { icon: '⚠️', color: '#f59e0b' },
+    'Emergency Audit': { icon: '🚨', color: '#ef4444' }
+  };
 
-						{/* Right: Pack Configuration */}
-						<div style={{ padding: '20px', border: '1px solid #ddd', borderRadius: '8px' }}>
-							<h3>Configure Pack</h3>
-							{selectedProc ? (
-								<div style={{ marginTop: '15px' }}>
-									<div style={{ marginBottom: '20px', padding: '15px', background: '#f0f8ff', borderRadius: '4px' }}>
-										<h4 style={{ margin: '0 0 10px 0' }}>{selectedProc.name}</h4>
-										<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '10px' }}>
-											<div>
-												<p style={{ margin: '0', fontSize: '12px', color: '#666' }}>DOCUMENTS</p>
-												<p style={{ margin: '5px 0 0 0', fontWeight: 'bold', fontSize: '18px' }}>{selectedProc.documentsCount}</p>
-											</div>
-											<div>
-												<p style={{ margin: '0', fontSize: '12px', color: '#666' }}>APPROVALS</p>
-												<p style={{ margin: '5px 0 0 0', fontWeight: 'bold', fontSize: '18px' }}>{selectedProc.approvalsCount}</p>
-											</div>
-											<div>
-												<p style={{ margin: '0', fontSize: '12px', color: '#666' }}>EVALUATIONS</p>
-												<p style={{ margin: '5px 0 0 0', fontWeight: 'bold', fontSize: '18px' }}>{selectedProc.evaluationsCount}</p>
-											</div>
-										</div>
-									</div>
+  const formatCurrency = (amount) => {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    }).format(amount);
+  };
 
-									<h4>Include in Pack:</h4>
-									<label style={{ display: 'block', marginBottom: '10px', cursor: 'pointer' }}>
-										<input
-											type="checkbox"
-											checked={includeDocuments}
-											onChange={(e) => setIncludeDocuments(e.target.checked)}
-											style={{ marginRight: '8px' }}
-										/>
-										All Documents & Versions
-									</label>
-									<label style={{ display: 'block', marginBottom: '10px', cursor: 'pointer' }}>
-										<input
-											type="checkbox"
-											checked={includeApprovals}
-											onChange={(e) => setIncludeApprovals(e.target.checked)}
-											style={{ marginRight: '8px' }}
-										/>
-										Approval Trail & Signatures
-									</label>
-									<label style={{ display: 'block', marginBottom: '20px', cursor: 'pointer' }}>
-										<input
-											type="checkbox"
-											checked={includeEvaluations}
-											onChange={(e) => setIncludeEvaluations(e.target.checked)}
-											style={{ marginRight: '8px' }}
-										/>
-										Evaluation Reports & Scores
-									</label>
+  const getStatusBadge = (status) => {
+    const config = statusConfig[status];
+    return (
+      <span 
+        className="status-badge"
+        style={{
+          backgroundColor: config.bg,
+          color: config.color,
+          padding: '0.5rem 0.75rem',
+          borderRadius: '20px',
+          fontSize: '0.8rem',
+          fontWeight: '600',
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: '0.5rem'
+        }}
+      >
+        <span>{config.icon}</span>
+        {config.label}
+      </span>
+    );
+  };
 
-									<button
-										onClick={handleGeneratePack}
-										disabled={generating}
-										style={{
-											padding: '10px 20px',
-											background: '#28a745',
-											color: 'white',
-											border: 'none',
-											borderRadius: '4px',
-											cursor: 'pointer',
-											width: '100%',
-											fontWeight: 'bold',
-											opacity: generating ? 0.6 : 1
-										}}
-									>
-										{generating ? '⏳ Generating...' : '📥 Generate & Download Pack'}
-									</button>
-								</div>
-							) : (
-								<p style={{ color: '#666' }}>Select a procurement to configure the audit pack.</p>
-							)}
-						</div>
-					</section>
+  const getRiskBadge = (risk) => {
+    const config = riskConfig[risk];
+    return (
+      <span 
+        className="risk-badge"
+        style={{
+          backgroundColor: config.bg,
+          color: config.color,
+          padding: '0.4rem 0.6rem',
+          borderRadius: '16px',
+          fontSize: '0.75rem',
+          fontWeight: '600',
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: '0.4rem'
+        }}
+      >
+        <span>{config.icon}</span>
+        {config.label}
+      </span>
+    );
+  };
 
-					{/* Audit History */}
-					<section style={{ marginTop: '40px' }}>
-						<h3>Recent Audit Packs</h3>
-						<table style={{ width: '100%', borderCollapse: 'collapse', marginTop: '20px' }}>
-							<thead>
-								<tr style={{ background: '#f5f5f5' }}>
-									<th style={{ padding: '10px', textAlign: 'left', borderBottom: '2px solid #ddd' }}>Procurement</th>
-									<th style={{ padding: '10px', textAlign: 'left', borderBottom: '2px solid #ddd' }}>Generated By</th>
-									<th style={{ padding: '10px', textAlign: 'left', borderBottom: '2px solid #ddd' }}>Date</th>
-									<th style={{ padding: '10px', textAlign: 'left', borderBottom: '2px solid #ddd' }}>Size</th>
-									<th style={{ padding: '10px', textAlign: 'left', borderBottom: '2px solid #ddd' }}>Actions</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr style={{ borderBottom: '1px solid #ddd' }}>
-									<td style={{ padding: '10px' }}>Office Equipment Q1 2025</td>
-									<td style={{ padding: '10px' }}>John Smith</td>
-									<td style={{ padding: '10px' }}>2025-02-15</td>
-									<td style={{ padding: '10px' }}>12.5 MB</td>
-									<td style={{ padding: '10px' }}>
-										<button style={{ padding: '4px 8px', marginRight: '8px', background: '#007bff', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>Download</button>
-										<button style={{ padding: '4px 8px', background: '#6c757d', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>View</button>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</section>
-		</div>
-	);
+  const getComplianceScoreColor = (score) => {
+    if (score >= 90) return '#10b981'; // Green
+    if (score >= 75) return '#f59e0b'; // Yellow
+    return '#ef4444'; // Red
+  };
+
+  const renderOverviewTab = () => (
+    <div className="audit-content">
+      {/* Statistics Section */}
+      <div className="stats-section">
+        <h2 className="section-title">Audit Overview</h2>
+        <div className="stats-grid">
+          <div className="stat-card">
+            <div className="stat-value">{stats.totalAudits}</div>
+            <div className="stat-label">Total Audits</div>
+            <div className="stat-icon">📊</div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-value">{stats.completedAudits}</div>
+            <div className="stat-label">Completed</div>
+            <div className="stat-icon">✅</div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-value">{stats.inProgressAudits}</div>
+            <div className="stat-label">In Progress</div>
+            <div className="stat-icon">🔄</div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-value">{stats.highRiskAudits}</div>
+            <div className="stat-label">High Risk</div>
+            <div className="stat-icon">🚨</div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-value">{stats.avgComplianceScore}%</div>
+            <div className="stat-label">Avg. Compliance</div>
+            <div className="stat-icon">📈</div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-value">{stats.totalFindings}</div>
+            <div className="stat-label">Total Findings</div>
+            <div className="stat-icon">🔍</div>
+          </div>
+        </div>
+      </div>
+
+      {/* Filters Section */}
+      <div className="filters-section">
+        <div className="search-group">
+          <label>Search Audits</label>
+          <input
+            type="text"
+            placeholder="Search by title, reference, or auditor..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="search-input"
+          />
+        </div>
+        <div className="filter-group">
+          <label>Status</label>
+          <select 
+            value={statusFilter} 
+            onChange={(e) => setStatusFilter(e.target.value)}
+            className="filter-select"
+          >
+            <option value="all">All Statuses</option>
+            <option value="draft">Draft</option>
+            <option value="scheduled">Scheduled</option>
+            <option value="in_progress">In Progress</option>
+            <option value="under_review">Under Review</option>
+            <option value="completed">Completed</option>
+          </select>
+        </div>
+        <div className="filter-group">
+          <label>Risk Level</label>
+          <select 
+            value={riskFilter} 
+            onChange={(e) => setRiskFilter(e.target.value)}
+            className="filter-select"
+          >
+            <option value="all">All Risk Levels</option>
+            <option value="low">Low Risk</option>
+            <option value="medium">Medium Risk</option>
+            <option value="high">High Risk</option>
+          </select>
+        </div>
+      </div>
+
+      {/* Audits Table */}
+      <div className="table-section">
+        <div className="table-header">
+          <h3>Audit Records ({filteredAudits.length})</h3>
+          <button 
+            onClick={() => setShowModal(true)}
+            className="btn btn-primary"
+          >
+            + Schedule New Audit
+          </button>
+        </div>
+        
+        <div className="table-container">
+          <table className="audits-table">
+            <thead>
+              <tr>
+                <th>Procurement Details</th>
+                <th>Audit Type</th>
+                <th>Status</th>
+                <th>Risk Level</th>
+                <th>Auditor</th>
+                <th>Compliance Score</th>
+                <th>Findings</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {filteredAudits.map((audit) => (
+                <tr key={audit.id}>
+                  <td>
+                    <div className="audit-info">
+                      <div className="audit-ref">{audit.procurementRef}</div>
+                      <div className="audit-title">{audit.title}</div>
+                      <div className="audit-meta">
+                        Value: {formatCurrency(audit.procurementValue)} | Stage: {audit.stage}
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div 
+                      className="type-badge"
+                      style={{ 
+                        backgroundColor: `${auditTypeConfig[audit.auditType]?.color}15`, 
+                        color: auditTypeConfig[audit.auditType]?.color 
+                      }}
+                    >
+                      <span className="type-icon">{auditTypeConfig[audit.auditType]?.icon}</span>
+                      {audit.auditType}
+                    </div>
+                  </td>
+                  <td>{getStatusBadge(audit.status)}</td>
+                  <td>{getRiskBadge(audit.riskLevel)}</td>
+                  <td>
+                    <div className="auditor-info">
+                      <div className="auditor-name">{audit.auditedBy}</div>
+                      <div className="audit-date">
+                        {audit.auditDate}
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div className="compliance-score">
+                      {audit.complianceScore ? (
+                        <div 
+                          className="score-circle"
+                          style={{ 
+                            backgroundColor: getComplianceScoreColor(audit.complianceScore),
+                            color: 'white',
+                            width: '40px',
+                            height: '40px',
+                            borderRadius: '50%',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            fontWeight: 'bold',
+                            fontSize: '0.8rem'
+                          }}
+                        >
+                          {audit.complianceScore}%
+                        </div>
+                      ) : (
+                        <span className="score-pending">Pending</span>
+                      )}
+                    </div>
+                  </td>
+                  <td>
+                    <div className="findings-summary">
+                      <div className="findings-total">
+                        <strong>{audit.findingsCount}</strong> Total
+                      </div>
+                      {audit.findingsCount > 0 && (
+                        <div className="findings-breakdown">
+                          <span className="critical-findings" title="Critical">🔴 {audit.criticalFindings}</span>
+                          <span className="major-findings" title="Major">🟡 {audit.majorFindings}</span>
+                          <span className="minor-findings" title="Minor">🟢 {audit.minorFindings}</span>
+                        </div>
+                      )}
+                    </div>
+                  </td>
+                  <td className="actions-cell">
+                    <div className="action-buttons">
+                      <button className="action-btn" title="View Audit">👁️</button>
+                      <button className="action-btn" title="Edit">✏️</button>
+                      <button className="action-btn" title="Generate Report">📊</button>
+                      <button className="action-btn" title="Download Pack">📦</button>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  );
+
+  const renderComplianceTab = () => (
+    <div className="compliance-section">
+      <h2 className="section-title">STEP Compliance Framework</h2>
+      <div className="compliance-framework">
+        <div className="compliance-area">
+          <div className="compliance-header">
+            <h3>📋 Documentation Compliance</h3>
+            <div className="compliance-score">85%</div>
+          </div>
+          <div className="compliance-items">
+            <div className="compliance-item">
+              <span>Procurement Plan Documentation</span>
+              <span className="compliance-status pass">✅</span>
+            </div>
+            <div className="compliance-item">
+              <span>Bidding Document Standards</span>
+              <span className="compliance-status pass">✅</span>
+            </div>
+            <div className="compliance-item">
+              <span>Evaluation Report Completeness</span>
+              <span className="compliance-status warning">⚠️</span>
+            </div>
+          </div>
+        </div>
+        
+        <div className="compliance-area">
+          <div className="compliance-header">
+            <h3>⚖️ Process Compliance</h3>
+            <div className="compliance-score">92%</div>
+          </div>
+          <div className="compliance-items">
+            <div className="compliance-item">
+              <span>Approval Authority Delegation</span>
+              <span className="compliance-status pass">✅</span>
+            </div>
+            <div className="compliance-item">
+              <span>Competitive Process Adherence</span>
+              <span className="compliance-status pass">✅</span>
+            </div>
+            <div className="compliance-item">
+              <span>Timeline Compliance</span>
+              <span className="compliance-status pass">✅</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="compliance-area">
+          <div className="compliance-header">
+            <h3>🔍 Review & Oversight</h3>
+            <div className="compliance-score">78%</div>
+          </div>
+          <div className="compliance-items">
+            <div className="compliance-item">
+              <span>Prior Review Requirements</span>
+              <span className="compliance-status warning">⚠️</span>
+            </div>
+            <div className="compliance-item">
+              <span>Post Review Compliance</span>
+              <span className="compliance-status pass">✅</span>
+            </div>
+            <div className="compliance-item">
+              <span>No Objection Procedures</span>
+              <span className="compliance-status fail">❌</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  return (
+    <StandardLayout title="Audit Management">
+      <div className="page-container">
+        <div className="page-header">
+          <h1 className="page-title">
+            <span className="title-icon">🔍</span>
+            Audit Management
+          </h1>
+          <p className="page-subtitle">
+            Comprehensive audit tracking and compliance monitoring following STEP methodology
+          </p>
+        </div>
+
+        {/* Navigation Tabs */}
+        <div className="nav-tabs">
+          <button 
+            className={`nav-tab ${activeView === 'overview' ? 'active' : ''}`}
+            onClick={() => setActiveView('overview')}
+          >
+            📊 Audit Overview
+          </button>
+          <button 
+            className={`nav-tab ${activeView === 'compliance' ? 'active' : ''}`}
+            onClick={() => setActiveView('compliance')}
+          >
+            📋 STEP Compliance
+          </button>
+          <button 
+            className={`nav-tab ${activeView === 'findings' ? 'active' : ''}`}
+            onClick={() => setActiveView('findings')}
+          >
+            🔍 Findings & Recommendations
+          </button>
+          <button 
+            className={`nav-tab ${activeView === 'reports' ? 'active' : ''}`}
+            onClick={() => setActiveView('reports')}
+          >
+            📊 Audit Reports
+          </button>
+        </div>
+
+        {/* Content based on active view */}
+        {activeView === 'overview' && renderOverviewTab()}
+        {activeView === 'compliance' && renderComplianceTab()}
+        {activeView === 'findings' && (
+          <div className="coming-soon">
+            <h2>Findings & Recommendations</h2>
+            <p>Detailed findings analysis and recommendation tracking coming soon...</p>
+          </div>
+        )}
+        {activeView === 'reports' && (
+          <div className="coming-soon">
+            <h2>Audit Reports</h2>
+            <p>Comprehensive audit reporting and analytics dashboard coming soon...</p>
+          </div>
+        )}
+
+        {/* Modal for new audit */}
+        {showModal && (
+          <div className="modal-overlay" onClick={() => setShowModal(false)}>
+            <div className="modal-content" onClick={e => e.stopPropagation()}>
+              <h3>Schedule New Audit</h3>
+              <p>Audit scheduling form coming soon...</p>
+              <button onClick={() => setShowModal(false)} className="btn btn-secondary">
+                Close
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+    </StandardLayout>
+  );
 }
 

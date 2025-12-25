@@ -84,7 +84,7 @@ const Sidebar = ({ isOpen = true, onToggle = null }) => {
       menu: 'plans',
       items: [
         { label: 'All Plans', path: '/plans', icon: '📋' },
-        { label: 'Create Plan', path: '/plans/new', icon: '➕' },
+        { label: 'Create Plan', path: '/plans/create', icon: '➕' },
         { label: 'Import Excel', path: '/plans/import', icon: '📤' },
         { label: 'Templates', path: '/plans/templates', icon: '📄' },
         { label: 'Workplans', path: '/plans/workplans', icon: '📊' },
@@ -219,7 +219,7 @@ const Sidebar = ({ isOpen = true, onToggle = null }) => {
         {/* Quick Actions in Header - Subtle */}
         {isOpen && (
           <div className="header-quick-actions">
-            <Link to="/plans/new" className="header-quick-btn" title="New Plan">➕</Link>
+            <Link to="/plans/create" className="header-quick-btn" title="New Plan">➕</Link>
             <Link to="/plans/import" className="header-quick-btn" title="Import">📤</Link>
           </div>
         )}

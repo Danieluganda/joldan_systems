@@ -6,7 +6,7 @@ import LoginPage from './pages/LoginPage';
 import ProcurementList from './pages/ProcurementList';
 import ProcurementSetup from './pages/ProcurementSetup';
 import PlanningPage from './pages/PlanningPage';
-import TemplateManager from './pages/TemplateManager';
+import TemplateManager from './pages/TemplateManagerDebug';
 import RFQWorkspace from './pages/RFQWorkspace';
 import RFQEditor from './pages/RFQEditor';
 import ClarificationsPage from './pages/ClarificationsPage';
@@ -20,6 +20,14 @@ import DocumentsPage from './pages/DocumentsPage';
 import RouteTestingPage from './pages/RouteTestingPage';
 import NoObjectionPage from './pages/NoObjectionPage';
 import Dashboard from './pages/Dashboard';
+
+// Import the new plan pages
+import PlansPage from './pages/PlansPage';
+import CreatePlanPage from './pages/CreatePlanPage';
+import ExcelImportPage from './pages/ExcelImportPage';
+import PlanTemplatesPage from './pages/PlanTemplatesPage';
+import StepMethodsPage from './pages/StepMethodsPage';
+import WorkplansPage from './pages/WorkplansPage';
 
 /**
  * Route configuration objects
@@ -51,6 +59,56 @@ const ROUTES = [
     component: Dashboard,
     icon: '📊',
     requiredPermission: 'view_dashboard',
+    showInNav: false
+  },
+
+  // Procurement Plans Routes
+  {
+    path: '/plans',
+    name: 'Plans',
+    component: PlansPage,
+    icon: '📋',
+    requiredPermission: 'view_procurement',
+    showInNav: true
+  },
+  {
+    path: '/plans/create',
+    name: 'Create Plan',
+    component: CreatePlanPage,
+    icon: '➕',
+    requiredPermission: 'create_procurement',
+    showInNav: false
+  },
+  {
+    path: '/plans/import',
+    name: 'Import Plans',
+    component: ExcelImportPage,
+    icon: '📤',
+    requiredPermission: 'create_procurement',
+    showInNav: false
+  },
+  {
+    path: '/plans/templates',
+    name: 'Plan Templates',
+    component: PlanTemplatesPage,
+    icon: '📄',
+    requiredPermission: 'view_procurement',
+    showInNav: false
+  },
+  {
+    path: '/plans/methods',
+    name: 'STEP Methods',
+    component: StepMethodsPage,
+    icon: '🔧',
+    requiredPermission: 'view_procurement',
+    showInNav: false
+  },
+  {
+    path: '/plans/workplans',
+    name: 'Workplans',
+    component: WorkplansPage,
+    icon: '📊',
+    requiredPermission: 'view_procurement',
     showInNav: false
   },
 
@@ -134,6 +192,14 @@ const ROUTES = [
     showInNav: true
   },
   {
+    path: '/rfqs/create',
+    name: 'Create RFQ',
+    component: RFQEditor,
+    icon: '✍️',
+    requiredPermission: 'create_rfq',
+    showInNav: false
+  },
+  {
     path: '/rfq/:id',
     name: 'Edit RFQ',
     component: RFQEditor,
@@ -196,6 +262,14 @@ const ROUTES = [
   {
     path: '/results',
     name: 'Results',
+    component: EvaluationPage,
+    icon: '📊',
+    requiredPermission: 'view_evaluations',
+    showInNav: false
+  },
+  {
+    path: '/evaluation/results',
+    name: 'Evaluation Results',
     component: EvaluationPage,
     icon: '📊',
     requiredPermission: 'view_evaluations',

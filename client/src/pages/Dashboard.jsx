@@ -2,7 +2,6 @@
 import React from 'react';
 import StandardLayout from '../components/layout/StandardLayout';
 import './pages.css';
-//import './dashboard.css';
 
 /**
  * Dashboard Component - STEP-Based Procurement Tracking
@@ -214,22 +213,24 @@ export default function Dashboard() {
       title="📊 Procurement Dashboard"
       description="STEP-based procurement tracking and monitoring system"
       headerActions={headerActions}
+      className="dashboard-layout"
     >
-      {/* Key Metrics */}
-      <div className="stats-grid">
-        {stats.map((stat, index) => (
-          <div key={index} className="stat-card">
-            <div className="stat-icon" style={{ backgroundColor: stat.color + '20', color: stat.color }}>
-              {stat.icon}
+      <div className="dashboard-container" style={{overflowY: 'auto', maxHeight: '100vh', paddingBottom: '2rem'}}>
+        {/* Key Metrics */}
+        <div className="stats-grid">
+          {stats.map((stat, index) => (
+            <div key={index} className="stat-card">
+              <div className="stat-icon" style={{ backgroundColor: stat.color + '20', color: stat.color }}>
+                {stat.icon}
+              </div>
+              <div className="stat-content">
+                <p className="stat-label">{stat.label}</p>
+                <p className="stat-value">{stat.value}</p>
+                <p style={{margin: '0.3rem 0 0 0', fontSize: '0.8rem', color: '#666'}}>{stat.change}</p>
+              </div>
             </div>
-            <div className="stat-content">
-              <p className="stat-label">{stat.label}</p>
-              <p className="stat-value">{stat.value}</p>
-              <p className="stat-change">{stat.change}</p>
-            </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
 
       {/* Alerts Section */}
       {alerts.length > 0 && (
@@ -247,7 +248,7 @@ export default function Dashboard() {
       {/* Main Content Grid */}
       <div className="dashboard-grid">
         {/* Recent Procurement Activities */}
-        <div className="dashboard-card wide">
+        <div className="dashboard-card" style={{gridColumn: 'span 2'}}>
           <div className="card-header">
             <h2>📋 Recent Procurement Activities</h2>
             <a href="#" className="view-all">View all →</a>
@@ -372,9 +373,11 @@ export default function Dashboard() {
                 <span className="deadline-date">{item.date}</span>
                 <div className="deadline-content">
                   <p className="deadline-title">{item.title}</p>
-                  <p className="deadline-ref">{item.ref}</p>
                   <p className="deadline-desc">{item.desc}</p>
-                  <p className="deadline-stage">Stage: {item.stage}</p>
+                  <div style={{fontSize: '0.8rem', color: '#666', marginTop: '0.5rem'}}>
+                    <div>{item.ref}</div>
+                    <div>Stage: {item.stage}</div>
+                  </div>
                 </div>
               </div>
             ))}
@@ -391,8 +394,15 @@ export default function Dashboard() {
             {myTasks.map((task) => (
               <label key={task.id} className="task-item">
                 <input type="checkbox" defaultChecked={task.done} />
-                <span className="task-text">{task.task}</span>
-                <span className={`task-priority priority-${task.priority}`}>
+                <span>{task.task}</span>
+                <span className={`activity-status status-${task.priority}`} style={{
+                  background: task.priority === 'high' ? '#fee2e2' : task.priority === 'medium' ? '#fff3cd' : '#f0f8ff',
+                  color: task.priority === 'high' ? '#dc2626' : task.priority === 'medium' ? '#f59e0b' : '#3b82f6',
+                  fontSize: '0.75rem',
+                  padding: '0.25rem 0.5rem',
+                  borderRadius: '4px',
+                  marginLeft: 'auto'
+                }}>
                   {task.priority}
                 </span>
               </label>
@@ -425,6 +435,7 @@ export default function Dashboard() {
             <span className="action-label">View Notifications</span>
           </button>
         </div>
+      </div>
       </div>
     </StandardLayout>
   );

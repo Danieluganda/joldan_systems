@@ -216,10 +216,12 @@ const Navbar = ({ user = null, onLogout = null }) => {
       </div>
 
       {/* Status Bar */}
+      {/*
       <div className="navbar-status">
         <span className="status-indicator online"></span>
         <span className="status-text">Online</span>
       </div>
+      */}
     </nav>
   );
 };
